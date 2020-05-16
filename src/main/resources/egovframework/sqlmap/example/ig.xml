@@ -14,19 +14,6 @@
 		<result property="regUser" column="reg_user"/>
 	</resultMap>
 
-	<select id="adfilel" resultClass="EgovMap">
-        <![CDATA[
-             SELECT 
-               *
-            FROM filelist
-            limit $firstindex$, $recordperpage$
-        ]]>
-    </select>
-     <select id="adfilet" resultClass="EgovMap">
-        <![CDATA[
-            SELECT count(*) num
-            FROM filelist
-        ]]>
-    </select>
+	
 
 </sqlMap>

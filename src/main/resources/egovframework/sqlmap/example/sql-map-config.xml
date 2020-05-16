@@ -3,4 +3,4 @@
 
 <sqlMapConfig>
 	<sqlMap resource="egovframework/sqlmap/example/sample/EgovSample_Sample_SQL.xml"/>
-<sqlMap resource="egovframework/sqlmap/example/bj.xml"></sqlMap></sqlMapConfig>
+<sqlMap resource="egovframework/sqlmap/example/bj.xml"></sqlMap><sqlMap resource="egovframework/sqlmap/example/ig.xml"></sqlMap><sqlMap resource="egovframework/sqlmap/example/mg.xml"></sqlMap><sqlMap resource="egovframework/sqlmap/example/park.xml"></sqlMap></sqlMapConfig>
