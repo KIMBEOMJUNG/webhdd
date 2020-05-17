@@ -24,6 +24,13 @@ public class mgController {
 	model.addAttribute("resultList", list);*/
 		return "mg/mgtest";
 	}
+	@RequestMapping(value="/mg/test.do")
+	public String test(HttpServletRequest request, ModelMap model) throws Exception
+	{
+	/*List<?> list = (List<?>) sampleDAO.list("selecta");   //Sample_sql.xml 파일 안에 select id 와 일치시켜주기!
+	model.addAttribute("resultList", list);*/
+		return "mg/test";
+	}
 
 	
 	
