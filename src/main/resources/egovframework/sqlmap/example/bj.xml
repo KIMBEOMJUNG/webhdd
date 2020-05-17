@@ -19,6 +19,7 @@
              SELECT 
                *
             FROM filelist
+            order by idx desc
             limit $firstindex$, $recordperpage$
         ]]>
     </select>

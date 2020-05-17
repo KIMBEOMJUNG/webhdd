@@ -119,7 +119,7 @@
                     <tr>
                       <td>${item.title}</td>
                       <td>
-                      <a href="/webhdd/mcsad/${item.files}" download >다운로드</a>
+                      <a href="/webhdd/mcsad/${item.files}" download="${item.files}" >다운로드</a>
                       ${item.context}</td>
                       <td class="numeric">${item.files}</td>
                       <td class="numeric">${item.useridx}</td>
@@ -132,6 +132,7 @@
                       	<button class="btn btn-primary btn-xs" type="button">삭제하기</button>
                       </td>
                     </tr>
+                    <%-- <img src="/webhdd/mcsad/${item.files}" width="100" height="auto"> --%>
                   </c:forEach>
                   </tbody>
                 </table>
