@@ -28,5 +28,12 @@
             FROM filelist
         ]]>
     </select>
+    
+    <insert id="inputimg" parameterClass="egovMap">
+	insert  into 
+	filelist( title ,context, files, date ) 
+	values( #title#,#context#,#img#, now()) 
+</insert>
+    
 
 </sqlMap>

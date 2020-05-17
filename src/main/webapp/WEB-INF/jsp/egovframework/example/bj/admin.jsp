@@ -118,7 +118,9 @@
                   <c:forEach var="item" items="${resultList}">
                     <tr>
                       <td>${item.title}</td>
-                      <td>${item.context}</td>
+                      <td>
+                      <a href="/webhdd/mcsad/${item.files}" download >다운로드</a>
+                      ${item.context}</td>
                       <td class="numeric">${item.files}</td>
                       <td class="numeric">${item.useridx}</td>
                       <td class="numeric">${item.date}</td>
