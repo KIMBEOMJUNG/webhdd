@@ -35,15 +35,6 @@
     Author: TemplateMag.com
     License: https://templatemag.com/license/
   ======================================================= -->
-  
-  <script>
-           function fn_egov_link_page(pageNo){
-              document.listForm.pageIndex.value = pageNo;
-              document.listForm.action = "<c:url value='/park/park.do'/>";
-                 document.listForm.submit();
-           }
-</script>
-  
 </head>
 
 <body>
@@ -260,11 +251,11 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <h5 class="centered">김범중</h5>
           <li class="mt">
             <a href="index.html">
               <i class="fa fa-dashboard"></i>
-              <span>내 자료</span>
+              <span>Dashboard</span>
               </a>
           </li>
           <li class="sub-menu">
@@ -300,10 +291,10 @@
               <span>Extra Pages</span>
               </a>
             <ul class="sub">
-              <li class="active"><a href="blank.html">Blank Page</a></li>
+              <li><a href="blank.html">Blank Page</a></li>
               <li><a href="login.html">Login</a></li>
               <li><a href="lock_screen.html">Lock Screen</a></li>
-              <li><a href="profile.html">Profile</a></li>
+              <li class="active"><a href="profile.html">Profile</a></li>
               <li><a href="invoice.html">Invoice</a></li>
               <li><a href="pricing_table.html">Pricing Table</a></li>
               <li><a href="faq.html">FAQ</a></li>
@@ -378,57 +369,104 @@
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
-       <section id="main-content">
+    <section id="main-content">
       <section class="wrapper site-min-height">
-        <h3><i class="fa fa-angle-right"></i> 회원 관리</h3>
         <div class="row mt">
           <div class="col-lg-12">
-            <!-- CHART PANELS -->
+            <div class="row content-panel">
 
-            <!-- /row - FIRST ROW OF PANELS -->
-            <!--  SECOND ROW OF PANELS -->
-            <div class="row">
+              <!-- /col-md-4 -->
+              <div class="col-md-4 profile-text">
+                <h3>${data.nickname}</h3>
+                <h3>등급 : 관리자</h3>
+                <br>
 
-              <c:forEach var="item" items="${resultList}">
 
-               <div class="col-md-4 col-sm-4 mb">
-                <div class="darkblue-panel pn">
-                  <div class="darkblue-header">
-                    <h5><a href="/webhdd/park/user.do?idx=${item.idx }">${item.nickname}</a></h5>
-                    <h5>${item.phoneNume}</h5>
-                  </div>
-                  <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
-                  <h5><i class="fa fa-handshake-o" aria-hidden="true"></i> 관리자</h5>
-                  <footer>
-                      <button type="button" class="btn btn-success">정보 수정</button>
-                    <div class="centered">
-
-                    </div>
-                  </footer>
+              </div>
+              <!-- /col-md-4 -->
+              <div class="col-md-4 centered">
+                <div class="profile-pic">
+                  <p><img src="img/ui-sam.jpg" class="img-circle"></p>
+                  <p>
+                    <button type="button" class="btn btn-danger">회원 삭제</button>
+                  </p>
                 </div>
-                <!--  /darkblue panel -->
-               </div>
-
-   			  </c:forEach>
-
-              <!--  /col-md-4 -->
-           
-
-         
-
-              
+              </div>
+              <!-- /col-md-4 -->
             </div>
-
-           
-			<ui:pagination paginationInfo="${paginationInfo }" type="image" jsFunction="fn_egov_link_page"/>
-			<form action="/webhdd/park/park.do" name="listForm" id="listForm">
-  			 <input type="hidden" name="pageIndex" value="1"/>   
-			</form>
-
-
-            <!--  END SIXTH ROW OF PANELS -->
+            <!-- /row -->
           </div>
+          <!-- /col-lg-12 -->
+          <div class="col-lg-12 mt">
+            <div class="row content-panel">
+              <div class="panel-heading">
+                <ul class="nav nav-tabs nav-justified">
+                  <li>
+                    <a data-toggle="tab" href="#edit">개인 정보 변경</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /panel-heading -->
+              <div class="panel-body">
+                <div class="tab-content">
+
+
+                  <div id="edit" class="tab-pane">
+                    <div class="row">
+                      <div class="col-lg-8 col-lg-offset-2 detailed">
+
+                        <form role="form" class="form-horizontal">
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">이름</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder="${data.nickname}" id="c-name" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">전화번호</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="lives-in" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">회원등급</label>
+                            &emsp;
+                            <select style="width:300px;height:35px;">
+                              <option>관리자</option>
+                              <option>일반 사용자</option>
+                            </select>
+                          </div>
+
+
+                        </form>
+                      </div>
+                      <div class="col-lg-8 col-lg-offset-2 detailed mt">
+
+                        <form role="form" class="form-horizontal">
+
+                          <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                              <button class="btn btn-theme" type="submit">Save</button>
+                              <button class="btn btn-theme04" type="button">Cancel</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <!-- /col-lg-8 -->
+                    </div>
+                    <!-- /row -->
+                  </div>
+                  <!-- /tab-pane -->
+                </div>
+                <!-- /tab-content -->
+              </div>
+              <!-- /panel-body -->
+            </div>
+            <!-- /col-lg-12 -->
+          </div>
+          <!-- /row -->
         </div>
+        <!-- /container -->
       </section>
       <!-- /wrapper -->
     </section>
@@ -449,7 +487,7 @@
           -->
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
-        <a href="blank.html#" class="go-top">
+        <a href="profile.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>
@@ -459,15 +497,36 @@
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="../lib/jquery/jquery.min.js"></script>
   <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../lib/jquery-ui-1.9.2.custom.min.js"></script>
-  <script src="../lib/jquery.ui.touch-punch.min.js"></script>
-  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script class="include" type="text/javascript" src="../lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="../lib/jquery.scrollTo.min.js"></script>
   <script src="../lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
   <script src="../lib/common-scripts.js"></script>
   <!--script for this page-->
+  <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+  <script>
+    $('.contact-map').click(function() {
 
+      //google map in tab click initialize
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(40.6700, -73.9400);
+        var mapOptions = {
+          zoom: 11,
+          scrollwheel: false,
+          center: myLatlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Dashio Admin Theme!'
+        });
+      }
+      google.maps.event.addDomListener(window, 'click', initialize);
+    });
+  </script>
 </body>
 
 </html>

@@ -14,6 +14,26 @@
 		<result property="regUser" column="reg_user"/>
 	</resultMap>
 
-	
+	<select id="userl" resultClass="EgovMap">
+        <![CDATA[
+             SELECT 
+                *
+            FROM user
+            limit $firstindex$, $recordperpage$
+        ]]>
+    </select>
+     <select id="usert" resultClass="EgovMap">
+        <![CDATA[
+            SELECT count(*) num
+            FROM user
+        ]]>
+    </select>
+    <select id="selecta" resultClass="egovMap">
+ 		SELECT * 
+  		FROM user
+  		where idx=#idx#
+	</select>
+    
+    
 
 </sqlMap>
