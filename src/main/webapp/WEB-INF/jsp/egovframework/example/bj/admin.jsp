@@ -53,41 +53,13 @@
         TOP BAR CONTENT & NOTIFICATIONS
         *********************************************************************************************************************************************************** -->
     <!--header start-->
-    <header class="header black-bg">
-      <div class="sidebar-toggle-box">
-        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-      </div>
-      <!--logo start-->
-      <a href="index.html" class="logo"><b>관리자페이지</b></a>
-      <!--logo end-->
-      
-      <div class="top-menu">
-        <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.html">Logout</a></li>
-        </ul>
-      </div>
-    </header>
+    <c:import url="/frame/admintop.do" />
     <!--header end-->
     <!-- **********************************************************************************************************************************************************
         MAIN SIDEBAR MENU
         *********************************************************************************************************************************************************** -->
     <!--sidebar start-->
-    <aside>
-      <div id="sidebar" class="nav-collapse ">
-        <!-- sidebar menu start-->
-        <ul class="sidebar-menu" id="nav-accordion">
-          
-          <li class="mt">
-            <a href="/webhdd/bj/admin.do">
-              <i class="fa fa-dashboard"></i>
-              <span>전체게시물 목록</span>
-              </a>
-          </li>
-          
-        </ul>
-        <!-- sidebar menu end-->
-      </div>
-    </aside>
+    
     <!--sidebar end-->
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
@@ -125,8 +97,8 @@
                       <td class="numeric">${item.useridx}</td>
                       <td class="numeric">${item.date}</td>
                       <td class="numeric">
-	                      <c:if test="${item.security eq 0}">공개</c:if>
-	                      <c:if test="${item.security eq 1}">비공개</c:if>
+	                      <c:if test="${item.security eq 1}">공개</c:if>
+	                      <c:if test="${item.security ne 1}">비공개</c:if>
                       </td>
                       <td class="numeric">
                       	<button class="btn btn-primary btn-xs" type="button">삭제하기</button>

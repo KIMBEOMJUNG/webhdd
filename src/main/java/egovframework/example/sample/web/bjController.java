@@ -54,7 +54,15 @@ public class bjController {
 		EgovMap in =new EgovMap();
 		in.put("title", title);
 		in.put("context", context);
-		in.put("se", se);
+		System.out.println("se:"+se);
+		if(se.compareTo("1") == 0)
+		{
+			in.put("se", se);
+		}
+		else
+		{
+			in.put("se", "0");
+		}
 		in.put("img", fileName);
 		sampleDAO.insert("inputimg",in);
 		return "redirect:/bj/admin.do";
@@ -160,7 +168,22 @@ public class bjController {
 	   }
 
 
+	@RequestMapping(value = "/frame/admintop.do")
+	public String admintop(HttpServletRequest request, ModelMap model) throws Exception {
+		System.out.println("/frame/admintop.do");
+		
+		
+		return "frame/admintop";
+	}
+	
 
+	@RequestMapping(value = "/frame/top.do")
+	public String top(HttpServletRequest request, ModelMap model) throws Exception {
+		System.out.println("/frame/top.do");
+		
+		
+		return "frame/top";
+	}
 	
 	
 	
