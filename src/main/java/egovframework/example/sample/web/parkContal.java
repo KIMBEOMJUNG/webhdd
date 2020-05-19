@@ -55,6 +55,17 @@ public class parkContal {
 		      model.addAttribute("data", m );
 			return "park/user";
 		}
+	   
+	   @RequestMapping(value="/park/board_detail.do")
+		public String board_detail(HttpServletRequest request, ModelMap model) throws Exception
+		{
+		   String idx = ""+request.getParameter("idx");
+		   EgovMap in =new EgovMap();
+		      in.put("idx", idx);
+		      EgovMap m = (EgovMap)sampleDAO.select("selecta", idx );//DB에 질의 해서
+		      model.addAttribute("data", m );
+			return "park/board_detail";
+		}
 
 	   
 }
