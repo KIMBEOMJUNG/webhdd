@@ -32,9 +32,11 @@
     
     <insert id="inputimg" parameterClass="egovMap">
 	insert  into 
-	filelist( title ,context, files, date ) 
-	values( #title#,#context#,#img#, now()) 
+	filelist( title ,context, files, date ,security ) 
+	values( #title#,#context#,#img#, now() , #se#) 
 </insert>
+    
+    
     
 
 </sqlMap>
