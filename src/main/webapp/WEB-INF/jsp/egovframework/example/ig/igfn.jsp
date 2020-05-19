@@ -28,7 +28,7 @@
   <!-- Custom styles for this template -->
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/style-responsive.css" rel="stylesheet">
-  
+
   <!-- =======================================================
     Template Name: Dashio
     Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
@@ -182,8 +182,7 @@
                   </a>
               </li>
               <li>
-                <a href="index.html#">See all messages
-                  </a>
+                <a href="index.html#">See all messages</a>
               </li>
             </ul>
           </li>
@@ -201,25 +200,29 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="label label-danger"><i class="fa fa-bolt"></i></span> Server Overloaded.
+                  <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                  Server Overloaded.
                   <span class="small italic">4 mins.</span>
                   </a>
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="label label-warning"><i class="fa fa-bell"></i></span> Memory #2 Not Responding.
+                  <span class="label label-warning"><i class="fa fa-bell"></i></span>
+                  Memory #2 Not Responding.
                   <span class="small italic">30 mins.</span>
                   </a>
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="label label-danger"><i class="fa fa-bolt"></i></span> Disk Space Reached 85%.
+                  <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                  Disk Space Reached 85%.
                   <span class="small italic">2 hrs.</span>
                   </a>
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="label label-success"><i class="fa fa-plus"></i></span> New User Registered.
+                  <span class="label label-success"><i class="fa fa-plus"></i></span>
+                  New User Registered.
                   <span class="small italic">3 hrs.</span>
                   </a>
               </li>
@@ -234,9 +237,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li>
-            <a class="logout" href="login.html">Logout</a>
-          </li>
+          <li><a class="logout" href="login.html">Logout</a></li>
         </ul>
       </div>
     </header>
@@ -249,9 +250,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered">
-            <a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a>
-          </p>
+          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
             <a href="index.html">
@@ -265,18 +264,10 @@
               <span>UI Elements</span>
               </a>
             <ul class="sub">
-              <li>
-                <a href="general.html">General</a>
-              </li>
-              <li>
-                <a href="buttons.html">Buttons</a>
-              </li>
-              <li>
-                <a href="panels.html">Panels</a>
-              </li>
-              <li>
-                <a href="font_awesome.html">Font Awesome</a>
-              </li>
+              <li><a href="general.html">General</a></li>
+              <li><a href="buttons.html">Buttons</a></li>
+              <li><a href="panels.html">Panels</a></li>
+              <li><a href="font_awesome.html">Font Awesome</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -285,27 +276,13 @@
               <span>Components</span>
               </a>
             <ul class="sub">
-              <li>
-                <a href="grids.html">Grids</a>
-              </li>
-              <li>
-                <a href="calendar.html">Calendar</a>
-              </li>
-              <li>
-                <a href="gallery.html">Gallery</a>
-              </li>
-              <li>
-                <a href="todo_list.html">Todo List</a>
-              </li>
-              <li>
-                <a href="dropzone.html">Dropzone File Upload</a>
-              </li>
-              <li>
-                <a href="inline_editor.html">Inline Editor</a>
-              </li>
-              <li>
-                <a href="file_upload.html">Multiple File Upload</a>
-              </li>
+              <li><a href="grids.html">Grids</a></li>
+              <li><a href="calendar.html">Calendar</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="todo_list.html">Todo List</a></li>
+              <li><a href="dropzone.html">Dropzone File Upload</a></li>
+              <li><a href="inline_editor.html">Inline Editor</a></li>
+              <li><a href="file_upload.html">Multiple File Upload</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -314,67 +291,39 @@
               <span>Extra Pages</span>
               </a>
             <ul class="sub">
-              <li>
-                <a href="blank.html">Blank Page</a>
-              </li>
-              <li>
-                <a href="login.html">Login</a>
-              </li>
-              <li>
-                <a href="lock_screen.html">Lock Screen</a>
-              </li>
-              <li>
-                <a href="profile.html">Profile</a>
-              </li>
-              <li>
-                <a href="invoice.html">Invoice</a>
-              </li>
-              <li>
-                <a href="pricing_table.html">Pricing Table</a>
-              </li>
-              <li>
-                <a href="faq.html">FAQ</a>
-              </li>
-              <li>
-                <a href="404.html">404 Error</a>
-              </li>
-              <li>
-                <a href="500.html">500 Error</a>
-              </li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-tasks"></i>
-              <span>Forms</span>
-              </a>
-            <ul class="sub">
-              <li>
-                <a href="form_component.html">Form Components</a>
-              </li>
-              <li>
-                <a href="advanced_form_components.html">Advanced Components</a>
-              </li>
-              <li>
-                <a href="form_validation.html">Form Validation</a>
-              </li>
+              <li><a href="blank.html">Blank Page</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li><a href="lock_screen.html">Lock Screen</a></li>
+              <li><a href="profile.html">Profile</a></li>
+              <li><a href="invoice.html">Invoice</a></li>
+              <li><a href="pricing_table.html">Pricing Table</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="404.html">404 Error</a></li>
+              <li><a href="500.html">500 Error</a></li>
             </ul>
           </li>
           <li class="sub-menu">
             <a class="active" href="javascript:;">
+              <i class="fa fa-tasks"></i>
+              <span>Forms</span>
+              </a>
+            <ul class="sub">
+              <li><a href="form_component.html">Form Components</a></li>
+              <li><a href="advanced_form_components.html">Advanced Components</a></li>
+              <li class="active"><a href="form_validation.html">Form Validation</a></li>
+              <li><a href="contactform.html">Contact Form</a></li>
+
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;">
               <i class="fa fa-th"></i>
               <span>Data Tables</span>
               </a>
             <ul class="sub">
-              <li class="active">
-                <a href="basic_table.html">Basic Table</a>
-              </li>
-              <li>
-                <a href="responsive_table.html">Responsive Table</a>
-              </li>
-              <li>
-                <a href="advanced_table.html">Advanced Table</a>
-              </li>
+              <li><a href="basic_table.html">Basic Table</a></li>
+              <li><a href="responsive_table.html">Responsive Table</a></li>
+              <li><a href="advanced_table.html">Advanced Table</a></li>
             </ul>
           </li>
           <li>
@@ -390,18 +339,10 @@
               <span>Charts</span>
               </a>
             <ul class="sub">
-              <li>
-                <a href="morris.html">Morris</a>
-              </li>
-              <li>
-                <a href="chartjs.html">Chartjs</a>
-              </li>
-              <li>
-                <a href="flot_chart.html">Flot Charts</a>
-              </li>
-              <li>
-                <a href="xchart.html">xChart</a>
-              </li>
+              <li><a href="morris.html">Morris</a></li>
+              <li><a href="chartjs.html">Chartjs</a></li>
+              <li><a href="flot_chart.html">Flot Charts</a></li>
+              <li><a href="xchart.html">xChart</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -410,12 +351,8 @@
               <span>Chat Room</span>
               </a>
             <ul class="sub">
-              <li>
-                <a href="lobby.html">Lobby</a>
-              </li>
-              <li>
-                <a href="chat_room.html"> Chat Room</a>
-              </li>
+              <li><a href="lobby.html">Lobby</a></li>
+              <li><a href="chat_room.html"> Chat Room</a></li>
             </ul>
           </li>
           <li>
@@ -435,178 +372,54 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Basic Table Examples</h3>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="content-panel">
-              <h4><i class="fa fa-angle-right"></i> Basic Table</h4>
-              <hr>
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        <h3><i class="fa fa-angle-right"></i> 회원가입</h3>
           </div>
-          <!-- /col-md-12 -->
-          <div class="col-md-12 mt">
-            <div class="content-panel">
-              <table class="table table-hover">
-                <h4><i class="fa fa-angle-right"></i> Hover Table</h4>
-                <hr>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Simon</td>
-                    <td>Mosa</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <!-- /col-md-12 -->
         </div>
-        <!-- row -->
-        <div class="row mt">
-          <div class="col-md-12">
-            <div class="content-panel">
-              <table class="table table-striped table-advance table-hover">
-                <h4><i class="fa fa-angle-right"></i> Advanced Table</h4>
-                <hr>
-                <thead>
-                  <tr>
-                    <th><i class="fa fa-bullhorn"></i> Company</th>
-                    <th class="hidden-phone"><i class="fa fa-question-circle"></i> Descrition</th>
-                    <th><i class="fa fa-bookmark"></i> Profit</th>
-                    <th><i class=" fa fa-edit"></i> Status</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <a href="basic_table.html#">Company Ltd</a>
-                    </td>
-                    <td class="hidden-phone">Lorem Ipsum dolor</td>
-                    <td>12000.00$ </td>
-                    <td><span class="label label-info label-mini">Due</span></td>
-                    <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="basic_table.html#">
-                        Dashio co
-                        </a>
-                    </td>
-                    <td class="hidden-phone">Lorem Ipsum dolor</td>
-                    <td>17900.00$ </td>
-                    <td><span class="label label-warning label-mini">Due</span></td>
-                    <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="basic_table.html#">
-                        Another Co
-                        </a>
-                    </td>
-                    <td class="hidden-phone">Lorem Ipsum dolor</td>
-                    <td>14400.00$ </td>
-                    <td><span class="label label-success label-mini">Paid</span></td>
-                    <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="basic_table.html#">Dashio ext</a>
-                    </td>
-                    <td class="hidden-phone">Lorem Ipsum dolor</td>
-                    <td>22000.50$ </td>
-                    <td><span class="label label-success label-mini">Paid</span></td>
-                    <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="basic_table.html#">Total Ltd</a>
-                    </td>
-                    <td class="hidden-phone">Lorem Ipsum dolor</td>
-                    <td>12120.00$ </td>
-                    <td><span class="label label-warning label-mini">Due</span></td>
-                    <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <!-- /content-panel -->
           </div>
-          <!-- /col-md-12 -->
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- /row -->
+        <div class="row mt">
+          <div class="col-lg-12">
+            <h4><i class="fa fa-angle-right"></i> Advanced Form Validations</h4>
+            <div class="form-panel">
+              <div class="form">
+                <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
+                  <div class="form-group ">
+                    <label for="username" class="control-label col-lg-2">username</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="username" name="username" type="text" />
+				      <button type="button">중복확인</button>
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="password" class="control-label col-lg-2">Password</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="password" name="password" type="password" />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="confirm_password" class="control-label col-lg-2">Confirm Password</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <button class="btn btn-theme" type="submit">Save</button>
+                      <button class="btn btn-theme04" type="button">Cancel</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- /form-panel -->
+          </div>
+          <!-- /col-lg-12 -->
         </div>
         <!-- /row -->
       </section>
+      <!-- /wrapper -->
     </section>
     <!-- /MAIN CONTENT -->
     <!--main content end-->
@@ -625,7 +438,7 @@
           -->
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
-        <a href="basic_table.html#" class="go-top">
+        <a href="form_validation.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>
@@ -641,7 +454,10 @@
   <!--common script for all pages-->
   <script src="../lib/common-scripts.js"></script>
   <!--script for this page-->
-  
+  <script src="../lib/form-validation-script.js"></script>
+
 </body>
 
 </html>
+
+
