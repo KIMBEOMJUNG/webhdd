@@ -29,7 +29,7 @@
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/style-responsive.css" rel="stylesheet">
   <script src="../lib/chart-master/Chart.js"></script>
-  <script>
+  <!-- <script>
 	function Posts(){
 		var i=0;
 		var title=['이민기','박재혁','김범중','민인규','이민기','박재혁','김범중','민인규','이민기','박재혁','김범중','민인규','이민기','박재혁','김범중','민인규'];
@@ -49,7 +49,7 @@
 			i=i+1;
 		}
 	 }
-   </script>
+   </script> -->
    <script>
 	function Usepercent(userpercent,use){
 		document.write('<h3>'+ userpercent +'% 사용중</h3>');
@@ -402,7 +402,7 @@
         <!-- page start-->
         <div class="row mt">
           <div class="col-sm-3">
-            <section class="panel">
+            <!-- <section class="panel">
               <div class="panel-body">
                 <a href="mail_compose.html" class="btn btn-compose">
                   <i class="fa fa-pencil"></i>  게시글 작성
@@ -416,7 +416,7 @@
                   <li><a href="#"> <i class="fa fa-trash-o"></i>쓰레기 통</a></li>
                 </ul>
               </div>
-            </section>
+            </section> -->
             <section class="panel">
               <div class="panel-body"> 
               <div>               
@@ -467,19 +467,6 @@
                 </h4>                   
               </header>
               <div class="panel-body minimal">
-              	<div class="row">
-              		<div class="col-sm-9">
-              			<form action="#" class="mail-src-position">
-                    		<div class="input-append">
-								<input type="text" class="form-control " placeholder="">
-							</div>
-                		</form>
-                	</div>	
-						<div class="btn-group">
-						<button type="button" class="btn btn-default" onclick="location.href='inbox.html'"><i class="fa fa-search"></i></button>
-                 	  	</div>
-              	</div>
-
                 <div class="mail-option">
                   <div class="chk-all">
                     <div class="pull-left mail-checkbox">
@@ -526,16 +513,7 @@
                       <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
                     </ul>
                   </div>
-                </div>
-                <div class="table-inbox-wrap ">
-                  <table class="table table-inbox table-hover">
-                    <tbody>
-                    	<script>Posts();</script>
-                    </tbody>
-                  </table>
-                </div>
-                <footer class="panel-heading wht-bg">
-               	 <ul class="unstyled inbox-pagination">
+                  <ul class="unstyled inbox-pagination">
                     <li><span>1-50 of 99</span></li>
                     <li>
                       <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
@@ -544,11 +522,41 @@
                       <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
                     </li>
                   </ul>
-                </footer>
+                </div>
+                <div class="table-inbox-wrap ">
+                  <table class="table table-inbox table-hover">
+                    <tbody>
+                      
+                      <c:forEach var="item" items="${resultList}">
+                      
+                      <tr class="">
+                        <td class="inbox-small-cells">
+                          <input type="checkbox" class="mail-checkbox">
+                        </td>
+                        <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                        <td class="view-message dont-show"><a href="mail_view.html">작성자</a></td>
+                        <td class="view-message"><a href="/webhdd/park/board_detail.do?idx=${item.idx}">${item.title}</a></td>
+                        <td class="view-message inbox-small-cells"></td>
+                        <td class="view-message text-right">${item.date }</td> 
+                      </tr>
+                      
+                      </c:forEach>
+                      
+                      
+                      
+                      
+                      
+                    </tbody>
+                  </table>
+                  <ui:pagination paginationInfo="${paginationInfo }" type="image" jsFunction="fn_egov_link_page"/>
+			<form action="/webhdd/park/park.do" name="listForm" id="listForm">
+  			 <input type="hidden" name="pageIndex" value="1"/>   
+			</form>
+                </div>
               </div>
             </section>
           </div>
-        </div>
+        </div> 
       </section>
       <!-- /wrapper -->
     </section>
