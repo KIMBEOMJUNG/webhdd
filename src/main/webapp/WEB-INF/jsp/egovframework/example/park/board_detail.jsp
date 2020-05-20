@@ -35,15 +35,6 @@
     Author: TemplateMag.com
     License: https://templatemag.com/license/
   ======================================================= -->
-  
-  <script>
-           function fn_egov_link_page(pageNo){
-              document.listForm.pageIndex.value = pageNo;
-              document.listForm.action = "<c:url value='/park/park.do'/>";
-                 document.listForm.submit();
-           }
-</script>
-  
 </head>
 
 <body>
@@ -260,11 +251,11 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <h5 class="centered">김범중</h5>
           <li class="mt">
             <a href="index.html">
               <i class="fa fa-dashboard"></i>
-              <span>내 자료</span>
+              <span>Dashboard</span>
               </a>
           </li>
           <li class="sub-menu">
@@ -300,10 +291,10 @@
               <span>Extra Pages</span>
               </a>
             <ul class="sub">
-              <li class="active"><a href="blank.html">Blank Page</a></li>
+              <li><a href="blank.html">Blank Page</a></li>
               <li><a href="login.html">Login</a></li>
               <li><a href="lock_screen.html">Lock Screen</a></li>
-              <li><a href="profile.html">Profile</a></li>
+              <li class="active"><a href="profile.html">Profile</a></li>
               <li><a href="invoice.html">Invoice</a></li>
               <li><a href="pricing_table.html">Pricing Table</a></li>
               <li><a href="faq.html">FAQ</a></li>
@@ -372,63 +363,104 @@
         </ul>
         <!-- sidebar menu end-->
       </div>
-    </aside>
+    </aside>aa
     <!--sidebar end-->
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
-       <section id="main-content">
-      <section class="wrapper site-min-height">
-        <h3><i class="fa fa-angle-right"></i> 회원 관리</h3>
-        <div class="row mt">
-          <div class="col-lg-12">
-            <!-- CHART PANELS -->
+      <section id="main-content">
+      <section class="wrapper">
+        <div class="col-lg-12 mt">
+          <div class="row content-panel">
+            <div class="col-lg-10 col-lg-offset-1">
+              <div class="invoice-body">
+                <div class="pull-left">
+                  <h1>화끈한 자료</h1><br>
+                  <address>
+                    <h4><i class="fa fa-user-circle-o" aria-hidden="true"></i>&emsp;<strong>박재혁</strong></h4>
 
-            <!-- /row - FIRST ROW OF PANELS -->
-            <!--  SECOND ROW OF PANELS -->
-            <div class="row">
-
-              <c:forEach var="item" items="${resultList}">
-
-               <div class="col-md-4 col-sm-4 mb">
-                <div class="darkblue-panel pn">
-                  <div class="darkblue-header">
-                    <h5><a href="/webhdd/park/user.do?idx=${item.idx }">${item.nickname}</a></h5>
-                    <h5>${item.phoneNume}</h5>
-                  </div>
-                  <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
-                  <h5><i class="fa fa-handshake-o" aria-hidden="true"></i> 관리자</h5>
-                  <footer>
-                      <button type="button" class="btn btn-success">정보 수정</button>
-                    <div class="centered">
-
-                    </div>
-                  </footer>
+                  </address>
                 </div>
-                <!--  /darkblue panel -->
-               </div>
+                <!-- /pull-left -->
 
-   			  </c:forEach>
+                <!-- /pull-right -->
+                <div class="clearfix"></div>
+                <br>
+                <br>
+                <br>
+                <div class="col-lg-offset-2 col-lg-10">
+                  <button class="btn btn-theme"  style="float: right;" type="submit">다운로드</button>
+                </div>
+                <div class="row">
+                  <div class="col-md-9">
+                    <h4>소제목 : 뜬밤</h4>
+                    <address>
+                  <strong>Enterprise Corp.</strong><br>
+                  234 Great Ave, Suite 600<br>
+                  San Francisco, CA 94107<br>
+                  <abbr title="Phone">P:</abbr> (123) 456-7890
+                </address>
+                  </div>
+                  <!-- /col-md-9 -->
+                  <div class="col-md-3">
+                    <br>
+                    <!-- /row -->
+                    <br>
+                    <div class="well well-small green">
+                      <div class="pull-left"> 댓글 : 2 개</div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <!-- /invoice-body -->
+                </div>
+                <!-- /col-lg-10 -->
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th style="width:60px" class="text-center">순서</th>
+                      <th class="text-left">댓글 내용</th>
+                      <th style="width:140px" class="text-right">등급</th>
+                      <th style="width:90px" class="text-right">사용자 이름</th>
+                    </tr>
+                  </thead>
+                  <tbody>
 
-              <!--  /col-md-4 -->
-           
+                    <tr>
+                      <td class="text-center">1</td>
+                      <td>받아가요~</td>
+                      <td class="text-right">관리자</td>
+                      <td class="text-right">김범중</td>
+                    </tr>
 
-         
-
-              
-            </div>
-
-           
-			<ui:pagination paginationInfo="${paginationInfo }" type="image" jsFunction="fn_egov_link_page"/>
-			<form action="/webhdd/park/park.do" name="listForm" id="listForm">
-  			 <input type="hidden" name="pageIndex" value="1"/>   
-			</form>
+                    <tr>
+                      <td class="text-center">2</td>
+                      <td>오늘은 이거다!!</td>
+                      <td class="text-right">일반 사용자</td>
+                      <td class="text-right">이민기</td>
+                    </tr>
 
 
-            <!--  END SIXTH ROW OF PANELS -->
-          </div>
-        </div>
+                  </tbody>
+                </table>
+                <div class=" form">
+                  <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
+                    <div class="form-group ">
+                      <div class="col-lg-10">
+                        <input class=" form-control"  id="cname" name="name" minlength="2" type="text" required />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-lg-offset-2 col-lg-10">
+                        <button class="btn btn-theme"  style="float: right;" type="submit">등록</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <br>
+                <br>
+              </div>
+              <!--/col-lg-12 mt -->
       </section>
       <!-- /wrapper -->
     </section>
@@ -449,7 +481,7 @@
           -->
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
-        <a href="blank.html#" class="go-top">
+        <a href="profile.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>
@@ -459,15 +491,36 @@
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="../lib/jquery/jquery.min.js"></script>
   <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../lib/jquery-ui-1.9.2.custom.min.js"></script>
-  <script src="../lib/jquery.ui.touch-punch.min.js"></script>
-  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script class="include" type="text/javascript" src="../lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="../lib/jquery.scrollTo.min.js"></script>
   <script src="../lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
   <script src="../lib/common-scripts.js"></script>
   <!--script for this page-->
+  <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+  <script>
+    $('.contact-map').click(function() {
 
+      //google map in tab click initialize
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(40.6700, -73.9400);
+        var mapOptions = {
+          zoom: 11,
+          scrollwheel: false,
+          center: myLatlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Dashio Admin Theme!'
+        });
+      }
+      google.maps.event.addDomListener(window, 'click', initialize);
+    });
+  </script>
 </body>
 
 </html>
