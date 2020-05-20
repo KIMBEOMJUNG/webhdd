@@ -407,13 +407,16 @@
                     <br>
                     <!-- /row -->
                     <br>
-                    <div class="well well-small green">
-                      <div class="pull-left"> 댓글 : 2 개</div>
-                      <div class="clearfix"></div>
-                    </div>
+                  
                   </div>
                   <!-- /invoice-body -->
                 </div>
+                <br>
+                <br>
+                 <div class="well well-small green">
+                      <div > 댓글 : 2 개</div>
+                      <div class="clearfix"></div>
+                    </div>
                 <!-- /col-lg-10 -->
                 <table class="table">
                   <thead>
