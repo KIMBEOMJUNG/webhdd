@@ -28,8 +28,34 @@
   <!-- Custom styles for this template -->
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/style-responsive.css" rel="stylesheet">
-  <style>
-  </style>
+  <script src="../lib/chart-master/Chart.js"></script>
+  <script>
+	function Posts(){
+		var i=0;
+		var title=['이민기','박재혁','김범중','민인규','이민기','박재혁','김범중','민인규','이민기','박재혁','김범중','민인규','이민기','박재혁','김범중','민인규'];
+		var preview=['이민기 test.','박재혁 test.','김범중 test.','민인규 test.','이민기 test.','박재혁 test.','김범중 test.','민인규 test.','이민기 test.','박재혁 test.','김범중 test.','민인규 test.','이민기 test.','박재혁 test.','김범중 test.','민인규 test.'];
+		var url = ['mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html'];
+		while(i<16){
+			document.write('<tr class="unread">');
+			document.write('<td class="inbox-small-cells">');
+			document.write('  <input type="checkbox" class="mail-checkbox">');
+			document.write('</td>');
+			document.write('<td class="inbox-small-cells"><i class="fa fa-star"></i></td>');
+			document.write('<td class="view-message  dont-show"><a href="'+url[i]+'">'+title[i]+'</a></td>');
+			document.write('<td class="view-message "><a href="'+url[i]+'">'+ preview[i] +'</a></td>');
+			document.write('<td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>');
+			document.write('<td class="view-message  text-right">08:10 AM</td>');
+			document.write('</tr>');
+			i=i+1;
+		}
+	 }
+   </script>
+   <script>
+	function Usepercent(userpercent,use){
+		document.write('<h3>'+ userpercent +'% 사용중</h3>');
+		document.write('<h5>'+use+'Mb/1Gb 여유공간 '+(1024-use)+'Mb</h5>');
+	}
+   </script>
 
   <!-- =======================================================
     Template Name: Dashio
@@ -288,12 +314,12 @@
             </ul>
           </li>
           <li class="sub-menu">
-            <a class="active" href="javascript:;">
+            <a href="javascript:;">
               <i class="fa fa-book"></i>
               <span>Extra Pages</span>
               </a>
             <ul class="sub">
-              <li class="active"><a href="blank.html">Blank Page</a></li>
+              <li><a href="blank.html">Blank Page</a></li>
               <li><a href="login.html">Login</a></li>
               <li><a href="lock_screen.html">Lock Screen</a></li>
               <li><a href="profile.html">Profile</a></li>
@@ -328,10 +354,10 @@
             </ul>
           </li>
           <li>
-            <a href="inbox.html">
+            <a class="active" href="inbox.html">
               <i class="fa fa-envelope"></i>
               <span>Mail </span>
-              <span class="label label-theme pull-right mail-info">2</span>
+              <span class="label label-theme pull-right mail-info">3</span>
               </a>
           </li>
           <li class="sub-menu">
@@ -372,275 +398,157 @@
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
     <section id="main-content">
-      <section class="wrapper site-min-height">
-        <h3><i class="fa fa-angle-right"></i> 게시판</h3>
+      <section class="wrapper">
+        <!-- page start-->
         <div class="row mt">
-	<!--*******************  검색창     *********************-->
-          <div class="col-lg-12">
- 	         <div class="panel-heading">
-				<div class="grey-style">
-          			<div class="col-lg-11">	
-            				<textarea rows="1" class="form-control"  ></textarea>
-            		</div>
-					<div class="pull-right">
-      	   				<button class="btn btn-sm btn-theme03">POST</button>
-           			</div>
-           		</div>
-          	 </div>
+          <div class="col-sm-3">
+            <section class="panel">
+              <div class="panel-body">
+                <a href="mail_compose.html" class="btn btn-compose">
+                  <i class="fa fa-pencil"></i>  게시글 작성
+                  </a>
+                <ul class="nav nav-pills nav-stacked mail-nav">
+                  <li class="active"><a href="inbox.html"> <i class="fa fa-list"></i> 공개 게시판  <span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li><a href="#"> <i class="fa fa-list"></i> 비공개 게시판 </a></li>
+                  <li><a href="#"> <i class="fa fa-star"></i> 즐겨찾기 </a></li>
+                  <li><a href="#"> <i class="fa fa-list"></i> 내가 작성한 게시글 <span class="label label-info pull-right inbox-notification">8</span></a></a>
+                  </li>
+                  <li><a href="#"> <i class="fa fa-trash-o"></i>쓰레기 통</a></li>
+                </ul>
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-body"> 
+              <div>               
+                 <h3 > <i class="fa fa-align-justify"></i>  카테고리</h3>
+               </div>
+                <ul class="nav nav-pills nav-stacked mail-nav">
+                  <li class="active"><a href="inbox.html"> <i class="fa fa-film"></i> 동영상  <span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li><a href="#"> <i class="fa fa-camera"></i> 사진 </a></li>
+                  <li><a href="#"> <i class="fa fa-file-text-o"></i> 문서 </a></li>
+                  <li><a href="#"> <i class="fa fa-music"></i> 음악 <span class="label label-info pull-right inbox-notification">8</span></a></a>
+                  </li>
+                  <li><a href="#"> <i class="fa fa-inbox"></i> 모든 파일 </a></li>
+                </ul>
+              </div>
+            </section>
+            <section class="panel">
+              <div class="green-panel pn">
+                  <div class="green-header">
+                    <h5>남은 공간</h5>
+                  </div>
+                  <canvas id="serverstatus03" height="110" width="120"></canvas>
+                  <script>
+                  	var space = 1024;
+                  	var use = 720;
+                  	var usepercent;
+                  	usepercent= Math.round(((space-use)/1024)*100);
+                    var doughnutData = [{
+                        value: 100-usepercent,
+                        color: "#2b2b2b"
+                      },
+                      {
+                        value: usepercent,
+                        color: "#fffffd"
+                      }
+                    ];
+                    var myDoughnut = new Chart(document.getElementById("serverstatus03").getContext("2d")).Doughnut(doughnutData);
+                    Usepercent(100-usepercent,use);
+                  </script>
+
+             </div>
+           </section>
+          </div>  
+          <div class="col-sm-9">
+            <section class="panel">
+              <header class="panel-heading wht-bg">
+                <h4 class="gen-case">
+                    	게시판
+                </h4>                   
+              </header>
+              <div class="panel-body minimal">
+              	<div class="row">
+              		<div class="col-sm-9">
+              			<form action="#" class="mail-src-position">
+                    		<div class="input-append">
+								<input type="text" class="form-control " placeholder="">
+							</div>
+                		</form>
+                	</div>	
+						<div class="btn-group">
+						<button type="button" class="btn btn-default" onclick="location.href='inbox.html'"><i class="fa fa-search"></i></button>
+                 	  	</div>
+              	</div>
+
+                <div class="mail-option">
+                  <div class="chk-all">
+                    <div class="pull-left mail-checkbox">
+                      <input type="checkbox" class="">
+                    </div>
+                    <div class="btn-group">
+                      <a data-toggle="dropdown" href="#" class="btn mini all">
+                        All
+                        <i class="fa fa-angle-down "></i>
+                        </a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#"> None</a></li>
+                        <li><a href="#"> Read</a></li>
+                        <li><a href="#"> Unread</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="btn-group">
+                    <a data-original-title="Refresh" data-placement="top" data-toggle="dropdown" href="#" class="btn mini tooltips">
+                      <i class=" fa fa-refresh"></i>
+                      </a>
+                  </div>
+                  <div class="btn-group hidden-phone">
+                    <a data-toggle="dropdown" href="#" class="btn mini blue">
+                      More
+                      <i class="fa fa-angle-down "></i>
+                      </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                      <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                    </ul>
+                  </div>
+                  <div class="btn-group">
+                    <a data-toggle="dropdown" href="#" class="btn mini blue">
+                      Move to
+                      <i class="fa fa-angle-down "></i>
+                      </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                      <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="table-inbox-wrap ">
+                  <table class="table table-inbox table-hover">
+                    <tbody>
+                    	<script>Posts();</script>
+                    </tbody>
+                  </table>
+                </div>
+                <footer class="panel-heading wht-bg">
+               	 <ul class="unstyled inbox-pagination">
+                    <li><span>1-50 of 99</span></li>
+                    <li>
+                      <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
+                    </li>
+                    <li>
+                      <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
+                    </li>
+                  </ul>
+                </footer>
+              </div>
+            </section>
           </div>
-	<!--*******************  내용물     *********************-->
-          <div class="col-lg-12">
-          	<div class="panel-bodyding">
-          	
-          		<div class="row">
-          			<div class="col-md-4 col-sm-4 mb">
-                		<div class="grey-panel pn donut-chart">
-                 			<div class="grey-header">
-                    			<h5>게시글 제목</h5><!-- 이 부분에 게시글 제목을 변수로 둬서 넣음 -->
-                  			</div>
-                		</div>
-              		</div>
-          			<div class="col-md-4 col-sm-4 mb">
-                		<div class="grey-panel pn donut-chart">
-                 			<div class="grey-header">
-                    			<h5>SERVER LOAD</h5>
-                  			</div>
-                  			<canvas id="serverstatus01" height="120" width="120"></canvas>
-                 			<script>
-	                    		var doughnutData = [{
-			                        value: 70,
-			                        color: "#FF6B6B"
-			                      },
-			                      {
-			                        value: 30,
-			                        color: "#fdfdfd"
-			                      }
-			                    ];
-	                  			var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
-                			</script>
-	                 		 <div class="row">
-	                   			 <div class="col-sm-6 col-xs-6 goleft">
-	                      			<p>Usage<br/>Increase:</p>
-	                    		</div>
-	                    		<div class="col-sm-6 col-xs-6">
-	                      			<h2>21%</h2>
-                    			</div>
-                  			</div>
-                		</div>
-                <!-- /grey-panel -->
-              		</div>
-          			<div class="col-md-4 col-sm-4 mb">
-                		<div class="grey-panel pn donut-chart">
-                 			<div class="grey-header">
-                    			<h5>SERVER LOAD</h5>
-                  			</div>
-                  			<canvas id="serverstatus01" height="120" width="120"></canvas>
-                 			<script>
-	                    		var doughnutData = [{
-			                        value: 70,
-			                        color: "#FF6B6B"
-			                      },
-			                      {
-			                        value: 30,
-			                        color: "#fdfdfd"
-			                      }
-			                    ];
-	                  			var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
-                			</script>
-	                 		 <div class="row">
-	                   			 <div class="col-sm-6 col-xs-6 goleft">
-	                      			<p>Usage<br/>Increase:</p>
-	                    		</div>
-	                    		<div class="col-sm-6 col-xs-6">
-	                      			<h2>21%</h2>
-                    			</div>
-                  			</div>
-                		</div>
-                <!-- /grey-panel -->
-              		</div>              		              		
-          		</div>
-          		<div class="row">
-          			<div class="col-md-4 col-sm-4 mb">
-                		<div class="grey-panel pn donut-chart">
-                 			<div class="grey-header">
-                    			<h5>SERVER LOAD</h5>
-                  			</div>
-                  			<canvas id="serverstatus01" height="120" width="120"></canvas>
-                 			<script>
-	                    		var doughnutData = [{
-			                        value: 70,
-			                        color: "#FF6B6B"
-			                      },
-			                      {
-			                        value: 30,
-			                        color: "#fdfdfd"
-			                      }
-			                    ];
-	                  			var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
-                			</script>
-	                 		 <div class="row">
-	                   			 <div class="col-sm-6 col-xs-6 goleft">
-	                      			<p>Usage<br/>Increase:</p>
-	                    		</div>
-	                    		<div class="col-sm-6 col-xs-6">
-	                      			<h2>21%</h2>
-                    			</div>
-                  			</div>
-                		</div>
-                <!-- /grey-panel -->
-              		</div>
-          			<div class="col-md-4 col-sm-4 mb">
-                		<div class="grey-panel pn donut-chart">
-                 			<div class="grey-header">
-                    			<h5>SERVER LOAD</h5>
-                  			</div>
-                  			<canvas id="serverstatus01" height="120" width="120"></canvas>
-                 			<script>
-	                    		var doughnutData = [{
-			                        value: 70,
-			                        color: "#FF6B6B"
-			                      },
-			                      {
-			                        value: 30,
-			                        color: "#fdfdfd"
-			                      }
-			                    ];
-	                  			var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
-                			</script>
-	                 		 <div class="row">
-	                   			 <div class="col-sm-6 col-xs-6 goleft">
-	                      			<p>Usage<br/>Increase:</p>
-	                    		</div>
-	                    		<div class="col-sm-6 col-xs-6">
-	                      			<h2>21%</h2>
-                    			</div>
-                  			</div>
-                		</div>
-                <!-- /grey-panel -->
-              		</div>
-          			<div class="col-md-4 col-sm-4 mb">
-                		<div class="grey-panel pn donut-chart">
-                 			<div class="grey-header">
-                    			<h5>SERVER LOAD</h5>
-                  			</div>
-                  			<canvas id="serverstatus01" height="120" width="120"></canvas>
-                 			<script>
-	                    		var doughnutData = [{
-			                        value: 70,
-			                        color: "#FF6B6B"
-			                      },
-			                      {
-			                        value: 30,
-			                        color: "#fdfdfd"
-			                      }
-			                    ];
-	                  			var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
-                			</script>
-	                 		 <div class="row">
-	                   			 <div class="col-sm-6 col-xs-6 goleft">
-	                      			<p>Usage<br/>Increase:</p>
-	                    		</div>
-	                    		<div class="col-sm-6 col-xs-6">
-	                      			<h2>21%</h2>
-                    			</div>
-                  			</div>
-                		</div>
-                <!-- /grey-panel -->
-              		</div>              		              		
-          		</div>
-          		<div class="row">
-          			<div class="col-md-4 col-sm-4 mb">
-                		<div class="grey-panel pn donut-chart">
-                 			<div class="grey-header">
-                    			<h5>SERVER LOAD</h5>
-                  			</div>
-                  			<canvas id="serverstatus01" height="120" width="120"></canvas>
-                 			<script>
-	                    		var doughnutData = [{
-			                        value: 70,
-			                        color: "#FF6B6B"
-			                      },
-			                      {
-			                        value: 30,
-			                        color: "#fdfdfd"
-			                      }
-			                    ];
-	                  			var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
-                			</script>
-	                 		 <div class="row">
-	                   			 <div class="col-sm-6 col-xs-6 goleft">
-	                      			<p>Usage<br/>Increase:</p>
-	                    		</div>
-	                    		<div class="col-sm-6 col-xs-6">
-	                      			<h2>21%</h2>
-                    			</div>
-                  			</div>
-                		</div>
-                <!-- /grey-panel -->
-              		</div>
-          			<div class="col-md-4 col-sm-4 mb">
-                		<div class="grey-panel pn donut-chart">
-                 			<div class="grey-header">
-                    			<h5>SERVER LOAD</h5>
-                  			</div>
-                  			<canvas id="serverstatus01" height="120" width="120"></canvas>
-                 			<script>
-	                    		var doughnutData = [{
-			                        value: 70,
-			                        color: "#FF6B6B"
-			                      },
-			                      {
-			                        value: 30,
-			                        color: "#fdfdfd"
-			                      }
-			                    ];
-	                  			var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
-                			</script>
-	                 		 <div class="row">
-	                   			 <div class="col-sm-6 col-xs-6 goleft">
-	                      			<p>Usage<br/>Increase:</p>
-	                    		</div>
-	                    		<div class="col-sm-6 col-xs-6">
-	                      			<h2>21%</h2>
-                    			</div>
-                  			</div>
-                		</div>
-                <!-- /grey-panel -->
-              		</div>
-          			<div class="col-md-4 col-sm-4 mb">
-                		<div class="grey-panel pn donut-chart">
-                 			<div class="grey-header">
-                    			<h5>SERVER LOAD</h5>
-                  			</div>
-                  			<canvas id="serverstatus01" height="120" width="120"></canvas>
-                 			<script>
-	                    		var doughnutData = [{
-			                        value: 70,
-			                        color: "#FF6B6B"
-			                      },
-			                      {
-			                        value: 30,
-			                        color: "#fdfdfd"
-			                      }
-			                    ];
-	                  			var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
-                			</script>
-	                 		 <div class="row">
-	                   			 <div class="col-sm-6 col-xs-6 goleft">
-	                      			<p>Usage<br/>Increase:</p>
-	                    		</div>
-	                    		<div class="col-sm-6 col-xs-6">
-	                      			<h2>21%</h2>
-                    			</div>
-                  			</div>
-                		</div>
-                <!-- /grey-panel -->
-              		</div>              		              		              		          		
-          		</div>
-          	</div>
-          </div>
-         </div>
- 
+        </div>
       </section>
       <!-- /wrapper -->
     </section>
@@ -661,7 +569,7 @@
           -->
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
-        <a href="blank.html#" class="go-top">
+        <a href="inbox.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>
@@ -671,9 +579,7 @@
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="../lib/jquery/jquery.min.js"></script>
   <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../lib/jquery-ui-1.9.2.custom.min.js"></script>
-  <script src="../lib/jquery.ui.touch-punch.min.js"></script>
-  <script class="../include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script class="include" type="text/javascript" src="../lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="../lib/jquery.scrollTo.min.js"></script>
   <script src="../lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
