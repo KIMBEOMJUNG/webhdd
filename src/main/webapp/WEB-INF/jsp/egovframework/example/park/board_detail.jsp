@@ -389,12 +389,12 @@
                 <br>
                 <br>
                 <br>
-                <div class="col-lg-offset-2 col-lg-10">
-                  <button class="btn btn-theme"  style="float: right;" type="submit">다운로드</button>
-                </div>
+                <button type="button"  class="btn btn-primary btn-lg">다운로드</button>
+                <br>
+                <br>
                 <div class="row">
                   <div class="col-md-9">
-                    <h4>소제목 : 뜬밤</h4>
+                    <h4>상세 설명 : 뜬밤</h4>
                     <address>
                   <strong>Enterprise Corp.</strong><br>
                   234 Great Ave, Suite 600<br>
@@ -446,20 +446,27 @@
 
                   </tbody>
                 </table>
-                <div class=" form">
+              <div class=" form">
+             
                   <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
+                 
+                
                     <div class="form-group ">
+                     
                       <div class="col-lg-10">
+                      
                         <input class=" form-control"  id="cname" name="name" minlength="2" type="text" required />
                       </div>
+                      <button class="btn btn-theme"  style="float: right;" type="submit">등록</button>
                     </div>
                     <div class="form-group">
                       <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-theme"  style="float: right;" type="submit">등록</button>
+                        
                       </div>
                     </div>
                   </form>
                 </div>
+               
                 <br>
                 <br>
               </div>
