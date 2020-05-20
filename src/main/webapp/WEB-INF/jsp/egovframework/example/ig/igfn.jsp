@@ -389,7 +389,7 @@
                     <label for="username" class="control-label col-lg-2">username</label>
                     <div class="col-lg-10">
                       <input class="form-control " id="username" name="username" type="text" />
-				      <button type="button">중복확인</button>
+				      <button class="btn btn-theme" type="submit">중복 확인</button>
                     </div>
                   </div>
                   <div class="form-group ">
