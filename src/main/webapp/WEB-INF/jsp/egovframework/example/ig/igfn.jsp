@@ -384,12 +384,20 @@
             <h4><i class="fa fa-angle-right"></i> Advanced Form Validations</h4>
             <div class="form-panel">
               <div class="form">
-                <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
+                <form class="cmxform form-horizontal style-form" id="signupForm" action="/webhdd/ig/joinprocess.do">
                   <div class="form-group ">
                     <label for="username" class="control-label col-lg-2">username</label>
                     <div class="col-lg-10">
                       <input class="form-control " id="username" name="username" type="text" />
-				      <button class="btn btn-theme" type="submit">중복 확인</button>
+                      <div style="margin-top:12px;">
+				      	<button class="btn btn-theme" type="submit">중복 확인</button>
+				      </div>
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="nickname" class="control-label col-lg-2">nickname</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="nickname" name="nickname" type="text" />
                     </div>
                   </div>
                   <div class="form-group ">
@@ -406,7 +414,7 @@
                   </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit">Save</button>
+                      <button class="btn btn-theme" type="submit">가입</button>
                       <button class="btn btn-theme04" type="button">Cancel</button>
                     </div>
                   </div>
