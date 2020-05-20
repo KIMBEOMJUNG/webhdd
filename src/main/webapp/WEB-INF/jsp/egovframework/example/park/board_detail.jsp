@@ -251,7 +251,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <h5 class="centered">김범중</h5>
           <li class="mt">
             <a href="index.html">
               <i class="fa fa-dashboard"></i>
@@ -286,7 +286,7 @@
             </ul>
           </li>
           <li class="sub-menu">
-            <a href="javascript:;">
+            <a class="active" href="javascript:;">
               <i class="fa fa-book"></i>
               <span>Extra Pages</span>
               </a>
@@ -294,7 +294,7 @@
               <li><a href="blank.html">Blank Page</a></li>
               <li><a href="login.html">Login</a></li>
               <li><a href="lock_screen.html">Lock Screen</a></li>
-              <li><a href="profile.html">Profile</a></li>
+              <li class="active"><a href="profile.html">Profile</a></li>
               <li><a href="invoice.html">Invoice</a></li>
               <li><a href="pricing_table.html">Pricing Table</a></li>
               <li><a href="faq.html">FAQ</a></li>
@@ -303,16 +303,15 @@
             </ul>
           </li>
           <li class="sub-menu">
-            <a class="active" href="javascript:;">
+            <a href="javascript:;">
               <i class="fa fa-tasks"></i>
               <span>Forms</span>
               </a>
             <ul class="sub">
               <li><a href="form_component.html">Form Components</a></li>
               <li><a href="advanced_form_components.html">Advanced Components</a></li>
-              <li class="active"><a href="form_validation.html">Form Validation</a></li>
+              <li><a href="form_validation.html">Form Validation</a></li>
               <li><a href="contactform.html">Contact Form</a></li>
-
             </ul>
           </li>
           <li class="sub-menu">
@@ -364,60 +363,107 @@
         </ul>
         <!-- sidebar menu end-->
       </div>
-    </aside>
+    </aside>aa
     <!--sidebar end-->
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
-    <section id="main-content">
+      <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> 회원가입</h3>
-          </div>
-        </div>
-          </div>
-          <!-- /col-lg-12 -->
-        </div>
-        <!-- /row -->
-        <div class="row mt">
-          <div class="col-lg-12">
-            <h4><i class="fa fa-angle-right"></i> Advanced Form Validations</h4>
-            <div class="form-panel">
-              <div class="form">
-                <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2">username</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" name="username" type="text" />
-				      <button class="btn btn-theme" type="submit">중복 확인</button>
-                    </div>
+        <div class="col-lg-12 mt">
+          <div class="row content-panel">
+            <div class="col-lg-10 col-lg-offset-1">
+              <div class="invoice-body">
+                <div class="pull-left">
+                  <h1>화끈한 자료</h1><br>
+                  <address>
+                    <h4><i class="fa fa-user-circle-o" aria-hidden="true"></i>&emsp;<strong>박재혁</strong></h4>
+
+                  </address>
+                </div>
+                <!-- /pull-left -->
+
+                <!-- /pull-right -->
+                <div class="clearfix"></div>
+                <br>
+                <br>
+                <br>
+                <div class="col-lg-offset-2 col-lg-10">
+                  <button class="btn btn-theme"  style="float: right;" type="submit">다운로드</button>
+                </div>
+                <div class="row">
+                  <div class="col-md-9">
+                    <h4>소제목 : 뜬밤</h4>
+                    <address>
+                  <strong>Enterprise Corp.</strong><br>
+                  234 Great Ave, Suite 600<br>
+                  San Francisco, CA 94107<br>
+                  <abbr title="Phone">P:</abbr> (123) 456-7890
+                </address>
                   </div>
-                  <div class="form-group ">
-                    <label for="password" class="control-label col-lg-2">Password</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="password" name="password" type="password" />
-                    </div>
+                  <!-- /col-md-9 -->
+                  <div class="col-md-3">
+                    <br>
+                    <!-- /row -->
+                    <br>
+                  
                   </div>
-                  <div class="form-group ">
-                    <label for="confirm_password" class="control-label col-lg-2">Confirm Password</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
+                  <!-- /invoice-body -->
+                </div>
+                <br>
+                <br>
+                 <div class="well well-small green">
+                      <div > 댓글 : 2 개</div>
+                      <div class="clearfix"></div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit">Save</button>
-                      <button class="btn btn-theme04" type="button">Cancel</button>
+                <!-- /col-lg-10 -->
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th style="width:60px" class="text-center">순서</th>
+                      <th class="text-left">댓글 내용</th>
+                      <th style="width:140px" class="text-right">등급</th>
+                      <th style="width:90px" class="text-right">사용자 이름</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td class="text-center">1</td>
+                      <td>받아가요~</td>
+                      <td class="text-right">관리자</td>
+                      <td class="text-right">김범중</td>
+                    </tr>
+
+                    <tr>
+                      <td class="text-center">2</td>
+                      <td>오늘은 이거다!!</td>
+                      <td class="text-right">일반 사용자</td>
+                      <td class="text-right">이민기</td>
+                    </tr>
+
+
+                  </tbody>
+                </table>
+                <div class=" form">
+                  <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
+                    <div class="form-group ">
+                      <div class="col-lg-10">
+                        <input class=" form-control"  id="cname" name="name" minlength="2" type="text" required />
+                      </div>
                     </div>
-                  </div>
-                </form>
+                    <div class="form-group">
+                      <div class="col-lg-offset-2 col-lg-10">
+                        <button class="btn btn-theme"  style="float: right;" type="submit">등록</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <br>
+                <br>
               </div>
-            </div>
-            <!-- /form-panel -->
-          </div>
-          <!-- /col-lg-12 -->
-        </div>
-        <!-- /row -->
+              <!--/col-lg-12 mt -->
       </section>
       <!-- /wrapper -->
     </section>
@@ -438,7 +484,7 @@
           -->
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
-        <a href="form_validation.html#" class="go-top">
+        <a href="profile.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>
@@ -454,10 +500,30 @@
   <!--common script for all pages-->
   <script src="../lib/common-scripts.js"></script>
   <!--script for this page-->
-  <script src="../lib/form-validation-script.js"></script>
+  <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+  <script>
+    $('.contact-map').click(function() {
 
+      //google map in tab click initialize
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(40.6700, -73.9400);
+        var mapOptions = {
+          zoom: 11,
+          scrollwheel: false,
+          center: myLatlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Dashio Admin Theme!'
+        });
+      }
+      google.maps.event.addDomListener(window, 'click', initialize);
+    });
+  </script>
 </body>
 
 </html>
-
-

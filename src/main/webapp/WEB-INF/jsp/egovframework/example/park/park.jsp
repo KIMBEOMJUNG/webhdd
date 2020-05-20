@@ -35,6 +35,15 @@
     Author: TemplateMag.com
     License: https://templatemag.com/license/
   ======================================================= -->
+  
+  <script>
+           function fn_egov_link_page(pageNo){
+              document.listForm.pageIndex.value = pageNo;
+              document.listForm.action = "<c:url value='/park/park.do'/>";
+                 document.listForm.submit();
+           }
+</script>
+  
 </head>
 
 <body>
@@ -380,80 +389,42 @@
             <!--  SECOND ROW OF PANELS -->
             <div class="row">
 
-              <!-- /col-md-4 -->
+              <c:forEach var="item" items="${resultList}">
+
+               <div class="col-md-4 col-sm-4 mb">
+                <div class="darkblue-panel pn">
+                  <div class="darkblue-header">
+                    <h5><a href="/webhdd/park/user.do?idx=${item.idx }">${item.nickname}</a></h5>
+                    <h5>${item.phoneNume}</h5>
+                  </div>
+                  <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
+                  <h5><i class="fa fa-handshake-o" aria-hidden="true"></i> 관리자</h5>
+                  <footer>
+                      <button type="button" class="btn btn-success">정보 수정</button>
+                    <div class="centered">
+
+                    </div>
+                  </footer>
+                </div>
+                <!--  /darkblue panel -->
+               </div>
+
+   			  </c:forEach>
 
               <!--  /col-md-4 -->
-              <div class="col-md-4 col-sm-4 mb">
-                <div class="darkblue-panel pn">
-                  <div class="darkblue-header">
-                    <h5>김범중</h5>
-                  </div>
-                  <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
-                  <h5><i class="fa fa-handshake-o" aria-hidden="true"></i> 관리자</h5>
-                  <footer>
-                      <button type="button" class="btn btn-success">정보 수정</button>
-                    <div class="centered">
+           
 
-                    </div>
-                  </footer>
-                </div>
-                <!--  /darkblue panel -->
-              </div>
+         
 
-              <div class="col-md-4 col-sm-4 mb">
-                <div class="darkblue-panel pn">
-                  <div class="darkblue-header">
-                    <h5>인민규</h5>
-                  </div>
-                  <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
-                  <h5><i class="fa fa-handshake-o" aria-hidden="true"></i> 관리자</h5>
-                  <footer>
-                      <button type="button" class="btn btn-success">정보 수정</button>
-                    <div class="centered">
-
-                    </div>
-                  </footer>
-                </div>
-                <!--  /darkblue panel -->
-              </div>
-
-              <div class="col-md-4 col-sm-4 mb">
-                <div class="green-panel pn">
-                  <div class="green-header">
-                    <h5>이민기</h5>
-                  </div>
-                  <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
-                  <h5><i class="fa fa-user" aria-hidden="true"></i> 일반 사용자</h5>
-                  <footer>
-                      <button type="button" class="btn btn-success">정보 수정</button>
-                    <div class="centered">
-
-                    </div>
-                  </footer>
-                </div>
-                <!--  /darkblue panel -->
-              </div>
-              <!-- /col-md-4 -->
+              
             </div>
 
-              <div class="row">
-                <div class="col-md-4 col-sm-4 mb">
-                  <div class="green-panel pn">
-                    <div class="green-header">
-                      <h5>박재혁</h5>
-                    </div>
-                    <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
-                    <h5><i class="fa fa-user" aria-hidden="true"></i> 일반 사용자</h5>
-                    <footer>
-                        <button type="button" class="btn btn-success">정보 수정</button>
-                      <div class="centered">
+           
+			<ui:pagination paginationInfo="${paginationInfo }" type="image" jsFunction="fn_egov_link_page"/>
+			<form action="/webhdd/park/park.do" name="listForm" id="listForm">
+  			 <input type="hidden" name="pageIndex" value="1"/>   
+			</form>
 
-                      </div>
-                    </footer>
-                  </div>
-                  <!--  /darkblue panel -->
-                </div>
-             </div>
 
             <!--  END SIXTH ROW OF PANELS -->
           </div>

@@ -251,7 +251,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <h5 class="centered">김범중</h5>
           <li class="mt">
             <a href="index.html">
               <i class="fa fa-dashboard"></i>
@@ -286,7 +286,7 @@
             </ul>
           </li>
           <li class="sub-menu">
-            <a href="javascript:;">
+            <a class="active" href="javascript:;">
               <i class="fa fa-book"></i>
               <span>Extra Pages</span>
               </a>
@@ -294,7 +294,7 @@
               <li><a href="blank.html">Blank Page</a></li>
               <li><a href="login.html">Login</a></li>
               <li><a href="lock_screen.html">Lock Screen</a></li>
-              <li><a href="profile.html">Profile</a></li>
+              <li class="active"><a href="profile.html">Profile</a></li>
               <li><a href="invoice.html">Invoice</a></li>
               <li><a href="pricing_table.html">Pricing Table</a></li>
               <li><a href="faq.html">FAQ</a></li>
@@ -303,16 +303,15 @@
             </ul>
           </li>
           <li class="sub-menu">
-            <a class="active" href="javascript:;">
+            <a href="javascript:;">
               <i class="fa fa-tasks"></i>
               <span>Forms</span>
               </a>
             <ul class="sub">
               <li><a href="form_component.html">Form Components</a></li>
               <li><a href="advanced_form_components.html">Advanced Components</a></li>
-              <li class="active"><a href="form_validation.html">Form Validation</a></li>
+              <li><a href="form_validation.html">Form Validation</a></li>
               <li><a href="contactform.html">Contact Form</a></li>
-
             </ul>
           </li>
           <li class="sub-menu">
@@ -371,53 +370,103 @@
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
     <section id="main-content">
-      <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> 회원가입</h3>
-          </div>
-        </div>
-          </div>
-          <!-- /col-lg-12 -->
-        </div>
-        <!-- /row -->
+      <section class="wrapper site-min-height">
         <div class="row mt">
           <div class="col-lg-12">
-            <h4><i class="fa fa-angle-right"></i> Advanced Form Validations</h4>
-            <div class="form-panel">
-              <div class="form">
-                <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2">username</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" name="username" type="text" />
-				      <button class="btn btn-theme" type="submit">중복 확인</button>
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="password" class="control-label col-lg-2">Password</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="password" name="password" type="password" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="confirm_password" class="control-label col-lg-2">Confirm Password</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit">Save</button>
-                      <button class="btn btn-theme04" type="button">Cancel</button>
-                    </div>
-                  </div>
-                </form>
+            <div class="row content-panel">
+
+              <!-- /col-md-4 -->
+              <div class="col-md-4 profile-text">
+                <h3>${data.nickname}</h3>
+                <h3>등급 : 관리자</h3>
+                <br>
+
+
               </div>
+              <!-- /col-md-4 -->
+              <div class="col-md-4 centered">
+                <div class="profile-pic">
+                  <p><img src="img/ui-sam.jpg" class="img-circle"></p>
+                  <p>
+                    <button type="button" class="btn btn-danger">회원 삭제</button>
+                  </p>
+                </div>
+              </div>
+              <!-- /col-md-4 -->
             </div>
-            <!-- /form-panel -->
+            <!-- /row -->
           </div>
           <!-- /col-lg-12 -->
+          <div class="col-lg-12 mt">
+            <div class="row content-panel">
+              <div class="panel-heading">
+                <ul class="nav nav-tabs nav-justified">
+                  <li>
+                    <a data-toggle="tab" href="#edit">개인 정보 변경</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /panel-heading -->
+              <div class="panel-body">
+                <div class="tab-content">
+
+
+                  <div id="edit" class="tab-pane">
+                    <div class="row">
+                      <div class="col-lg-8 col-lg-offset-2 detailed">
+
+                        <form role="form" class="form-horizontal">
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">이름</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder="${data.nickname}" id="c-name" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">전화번호</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="lives-in" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">회원등급</label>
+                            &emsp;
+                            <select style="width:300px;height:35px;">
+                              <option>관리자</option>
+                              <option>일반 사용자</option>
+                            </select>
+                          </div>
+
+
+                        </form>
+                      </div>
+                      <div class="col-lg-8 col-lg-offset-2 detailed mt">
+
+                        <form role="form" class="form-horizontal">
+
+                          <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                              <button class="btn btn-theme" type="submit">Save</button>
+                              <button class="btn btn-theme04" type="button">Cancel</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <!-- /col-lg-8 -->
+                    </div>
+                    <!-- /row -->
+                  </div>
+                  <!-- /tab-pane -->
+                </div>
+                <!-- /tab-content -->
+              </div>
+              <!-- /panel-body -->
+            </div>
+            <!-- /col-lg-12 -->
+          </div>
+          <!-- /row -->
         </div>
-        <!-- /row -->
+        <!-- /container -->
       </section>
       <!-- /wrapper -->
     </section>
@@ -438,7 +487,7 @@
           -->
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
-        <a href="form_validation.html#" class="go-top">
+        <a href="profile.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>
@@ -454,10 +503,30 @@
   <!--common script for all pages-->
   <script src="../lib/common-scripts.js"></script>
   <!--script for this page-->
-  <script src="../lib/form-validation-script.js"></script>
+  <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+  <script>
+    $('.contact-map').click(function() {
 
+      //google map in tab click initialize
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(40.6700, -73.9400);
+        var mapOptions = {
+          zoom: 11,
+          scrollwheel: false,
+          center: myLatlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Dashio Admin Theme!'
+        });
+      }
+      google.maps.event.addDomListener(window, 'click', initialize);
+    });
+  </script>
 </body>
 
 </html>
-
-
