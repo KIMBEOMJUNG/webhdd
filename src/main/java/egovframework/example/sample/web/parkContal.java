@@ -63,7 +63,7 @@ public class parkContal {
 		   EgovMap in =new EgovMap();
 		      in.put("idx", idx);
 		      EgovMap m = (EgovMap)sampleDAO.select("selecta", idx );//DB에 질의 해서
-		      model.addAttribute("data", m );
+		      model.addAttribute("ddata", m );
 			return "park/board_detail";
 		}
 

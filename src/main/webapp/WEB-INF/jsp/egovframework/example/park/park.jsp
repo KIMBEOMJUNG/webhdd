@@ -392,15 +392,28 @@
               <c:forEach var="item" items="${resultList}">
 
                <div class="col-md-4 col-sm-4 mb">
-                <div class="darkblue-panel pn">
+               
+               <c:if test="${item.grade==1}">
+                <div class="darkblue-panel pn">                                 
                   <div class="darkblue-header">
-                    <h5><a href="/webhdd/park/user.do?idx=${item.idx }">${item.nickname}</a></h5>
-                    <h5>${item.phoneNume}</h5>
+                  </c:if > 
+               <c:if test="${item.grade==0}">
+                 <div class="green-panel pn">
+                  <div class="green-header">
+                  </c:if >                   
+                    <h5><a href="/webhdd/park/user.do?idx=${item.idx }">${item.nickname}</a></h5>                    
                   </div>
+                  
                   <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
-                  <h5><i class="fa fa-handshake-o" aria-hidden="true"></i> 관리자</h5>
+                  <c:if test="${item.grade==0}">
+                  <h5><i class="fa fa-user" aria-hidden="true"></i> 일반 사용자</h5>
+                 </c:if >
+                  <c:if test="${item.grade==1}">
+                     <h5><i class="fa fa-handshake-o" aria-hidden="true"></i> 관리자</h5>
+                  </c:if>
+                  
                   <footer>
-                      <button type="button" class="btn btn-success">정보 수정</button>
+                      <button type="button" onclick="location.href='/webhdd/park/user.do?idx=${item.idx }'" class="btn btn-success">정보 수정</button>
                     <div class="centered">
 
                     </div>
