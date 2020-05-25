@@ -378,7 +378,14 @@
               <!-- /col-md-4 -->
               <div class="col-md-4 profile-text">
                 <h3>${data.nickname}</h3>
-                <h3>등급 : 관리자</h3>
+                <h3>등급 : 
+                 <c:if test="${data.grade==0}">
+                  	일반 사용자
+                 </c:if >
+                  <c:if test="${data.grade==1}">
+                 	   관리자
+                  </c:if>     
+                  </h3>                           
                 <br>
 
 
@@ -425,15 +432,24 @@
                           <div class="form-group">
                             <label class="col-lg-2 control-label">전화번호</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="lives-in" class="form-control">
+                              <input type="text" placeholder="${data.phoneNume} " id="lives-in" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">회원등급</label>
                             &emsp;
                             <select style="width:300px;height:35px;">
-                              <option>관리자</option>
-                              <option>일반 사용자</option>
+                            
+                             <c:if test="${data.grade==0}">
+                  				 <option>일반 사용자</option>
+                  				 <option>관리자</option>
+                				 </c:if >
+                 			 <c:if test="${data.grade==1}">
+                 			   	<option>관리자</option>
+                              	<option>일반 사용자</option>
+                 				 </c:if>     
+                              
+                             
                             </select>
                           </div>
 
