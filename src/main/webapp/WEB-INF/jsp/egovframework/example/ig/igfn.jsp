@@ -10,26 +10,68 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="Dashboard">
-  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="Dashboard">
+<meta name="keyword"
+	content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+<title>Dashio - Bootstrap Admin Template</title>
 
-  <!-- Favicons -->
-  <link href="../img/favicon.png" rel="icon">
-  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+<!-- Favicons -->
+<link href="../img/favicon.png" rel="icon">
+<link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Bootstrap core CSS -->
-  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!--external css-->
-  <link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/style-responsive.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--external css-->
+<link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<!-- Custom styles for this template -->
+<link href="../css/style.css" rel="stylesheet">
+<link href="../css/style-responsive.css" rel="stylesheet">
+<script type="text/javascript">
+	function openIdChk() {
+		//window.name="";
+		window.open("igfn2.do", "chKForm",
+				"width=500, height=500, resizable=no, scrollbars=no");
+	}
+	
+	function inputIdChk(){
+		document.signupForm.idDuplication.value="idUncheck";
+	}
+	
+	function checkValue(){
+		var form = document.signupForm;
+		
+		if(!form.Username.value){
+			alert("아이디를 입력하세요.");
+			return false;
+		}
+		
+		if(!form.Nickname.value){
+			alert("별명을 입력하세요.");
+			return false;
+		}
+		
+		if(form.idDuplication.value != "idCheck"){
+			alert("아이디 중복체크를 해주세요.");
+			return false;
+		}
+		
+		if(!form.password.value){
+			alert("비밀번호를 입력하세요.");
+			return false;
+		}
+		
+		// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+		if(form.password.value != form.confirm_password.value ){
+			alert("비밀번호를 동일하게 입력하세요.");
+			return false;
+		}	
+	}
+</script>
 
-  <!-- =======================================================
+<!-- =======================================================
     Template Name: Dashio
     Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
     Author: TemplateMag.com
@@ -372,7 +414,7 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> 회원가입</h3>
+        <h3><i class="fa fa-angle-right"></i>가입하기</h3>
           </div>
         </div>
           </div>
@@ -381,23 +423,26 @@
         <!-- /row -->
         <div class="row mt">
           <div class="col-lg-12">
-            <h4><i class="fa fa-angle-right"></i> Advanced Form Validations</h4>
+            <h4><i class="fa fa-angle-right"></i> 빠르고 쉽습니다.</h4>
             <div class="form-panel">
               <div class="form">
-                <form class="cmxform form-horizontal style-form" id="signupForm" action="/webhdd/ig/joinprocess.do">
+                <form class="cmxform form-horizontal style-form" id="signupForm" action="/webhdd/ig/joinprocess.do"
+                onsubmit='return checkValue()'>
                   <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2">username</label>
+                    <label for="Username" class="control-label col-lg-2">Username</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="username" name="username" type="text" />
-                      <div style="margin-top:12px;">
-				      	<button class="btn btn-theme" type="submit">중복 확인</button>
-				      </div>
+                      <input class="form-control " id="Username" name="Username" type="text" onkeydown="inputIdChk()"/> 
+                      <!-- 만약 사용자가 중복체크를 하고 난 뒤 아이디 입력란에 사용 가능한 아이디를 지우고 새로운 아이디를 입력했을 경우에 대처하기 위함-->
+                      <input class="btn btn-theme" style="margin-top:12px;" type="button" value="중복 확인" onclick="openIdChk()">
+                      <!-- 만약 사용자가 중복체크를 하고 난 뒤 아이디 입력란에 사용 가능한 아이디를 지우고 새로운 아이디를 입력했을 경우에 대처하기 위함-->
+                      <input type="hidden" name="idDuplication" value="idUncheck">
+                      <!--아이디 중복체크를 했는지 판단하기 위한 부분-->
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="nickname" class="control-label col-lg-2">nickname</label>
+                    <label for="Nickname" class="control-label col-lg-2">Nickname</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="nickname" name="nickname" type="text" />
+                      <input class="form-control " id="Nickname" name="Nickname" type="text" />
                     </div>
                   </div>
                   <div class="form-group ">
@@ -415,7 +460,7 @@
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
                       <button class="btn btn-theme" type="submit">가입</button>
-                      <button class="btn btn-theme04" type="button">Cancel</button>
+                      <button class="btn btn-theme04" type="button" onclick="location.href='../bj/main.do'">취소</button>
                     </div>
                   </div>
                 </form>

@@ -39,14 +39,14 @@ public class igContor {
 	 @RequestMapping(value="/ig/joinprocess.do")
 	   public String inputprocess(HttpServletRequest request, ModelMap model) throws Exception
 	   {
-	      String username = ""+request.getParameter("username");
+	      String Username = ""+request.getParameter("Username");
 	      String password = ""+request.getParameter("password");
-	      String nickname = ""+request.getParameter("nickname");
+	      String Nickname = ""+request.getParameter("Nickname");
 	      
 	      EgovMap in =new EgovMap();
-	      in.put("username", username);
+	      in.put("Username", Username);
 	      in.put("password", password);
-	      in.put("nickname", nickname);
+	      in.put("Nickname", Nickname);
 	      sampleDAO.insert("join",in);
 	      return "redirect:/ig/igfn.do";
 	   }
