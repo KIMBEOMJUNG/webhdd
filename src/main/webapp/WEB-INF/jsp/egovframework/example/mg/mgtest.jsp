@@ -383,21 +383,7 @@
         <!-- page start-->
         <div class="row mt">
           <div class="col-sm-3">
-            <!-- <section class="panel">
-              <div class="panel-body">
-                <a href="mail_compose.html" class="btn btn-compose">
-                  <i class="fa fa-pencil"></i>  게시글 작성
-                  </a>
-                <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li class="active"><a href="inbox.html"> <i class="fa fa-list"></i> 공개 게시판  <span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li><a href="#"> <i class="fa fa-list"></i> 비공개 게시판 </a></li>
-                  <li><a href="#"> <i class="fa fa-star"></i> 즐겨찾기 </a></li>
-                  <li><a href="#"> <i class="fa fa-list"></i> 내가 작성한 게시글 <span class="label label-info pull-right inbox-notification">8</span></a></a>
-                  </li>
-                  <li><a href="#"> <i class="fa fa-trash-o"></i>쓰레기 통</a></li>
-                </ul>
-              </div>
-            </section> -->
+ 
             <section class="panel">
               <div class="panel-body"> 
               <div>               
@@ -422,7 +408,7 @@
                     	게시판
                 </h4>                   
               </header>
-              <!-- 검색창 -->>
+<!------------------------------------------- 검색창 ----------------------------------------------------->
               <div class="panel-body minimal">
               	<div class="row">
               		<div class="col-sm-9">
@@ -436,7 +422,8 @@
 						<button type="button" class="btn btn-default" onclick="location.href='inbox.html'"><i class="fa fa-search"></i></button>
                  	</div>
               	</div>
-              	<!--  -->>
+<!--------------------------------------------검색창 끝---------------------------------------------------->
+              	<!--  -->
               <div class="panel-body minimal">
                 <div class="mail-option">
                   <div class="chk-all">
@@ -487,7 +474,7 @@
 
                 </div>
                 <div class="table-inbox-wrap ">
-                <!-- 게시글 목록  -->>
+                <!-- 게시글 목록  -->
                   <table class="table table-inbox table-hover">
                     <tbody>
                       
@@ -509,11 +496,11 @@
                       
                     </tbody>
                   </table>
-                  <!-- 페이지 -->>
+                  <!-- 페이지 -->
    			<ui:pagination paginationInfo="${paginationInfo }" type="image" jsFunction="fn_egov_link_page"/>             
 			<form action="/webhdd/park/park.do" name="listForm" id="listForm">
   			 <input type="hidden" name="pageIndex" value="1"/>
-  			 <!-- 페이지 버튼 -->>
+  			 <!-- 페이지 버튼 -->
   			 <ul class="unstyled inbox-pagination">
                 <li><span>1-50 of 99</span></li>
                 <li>
