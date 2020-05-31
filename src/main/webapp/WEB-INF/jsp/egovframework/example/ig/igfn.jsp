@@ -29,47 +29,6 @@
 <!-- Custom styles for this template -->
 <link href="../css/style.css" rel="stylesheet">
 <link href="../css/style-responsive.css" rel="stylesheet">
-<script type="text/javascript">
-	function openIdChk() {
-		//window.name="";
-		window.open("igfn2.do", "chKForm",
-				"width=500, height=500, resizable=no, scrollbars=no");
-	}
-	
-	function inputIdChk(){
-		document.signupForm.idDuplication.value="idUncheck";
-	}
-	
-	function checkValue(){
-		var form = document.signupForm;
-		
-		if(!form.Username.value){
-			alert("아이디를 입력하세요.");
-			return false;
-		}
-		
-		if(!form.Nickname.value){
-			alert("별명을 입력하세요.");
-			return false;
-		}
-		
-		if(form.idDuplication.value != "idCheck"){
-			alert("아이디 중복체크를 해주세요.");
-			return false;
-		}
-		
-		if(!form.password.value){
-			alert("비밀번호를 입력하세요.");
-			return false;
-		}
-		
-		// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-		if(form.password.value != form.confirm_password.value ){
-			alert("비밀번호를 동일하게 입력하세요.");
-			return false;
-		}	
-	}
-</script>
 
 <!-- =======================================================
     Template Name: Dashio
@@ -431,12 +390,8 @@
                   <div class="form-group ">
                     <label for="Username" class="control-label col-lg-2">Username</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="Username" name="Username" type="text" onkeydown="inputIdChk()"/> 
-                      <!-- 만약 사용자가 중복체크를 하고 난 뒤 아이디 입력란에 사용 가능한 아이디를 지우고 새로운 아이디를 입력했을 경우에 대처하기 위함-->
-                      <input class="btn btn-theme" style="margin-top:12px;" type="button" value="중복 확인" onclick="openIdChk()">
-                      <!-- 만약 사용자가 중복체크를 하고 난 뒤 아이디 입력란에 사용 가능한 아이디를 지우고 새로운 아이디를 입력했을 경우에 대처하기 위함-->
-                      <input type="hidden" name="idDuplication" value="idUncheck">
-                      <!--아이디 중복체크를 했는지 판단하기 위한 부분-->
+                      <input class="form-control " id="Username" name="Username" type="text" /> 
+                      <input class="btn btn-theme" style="margin-top:12px;" id="bubu" type="button" value="중복 확인" onclick="checkemailfunc()">
                     </div>
                   </div>
                   <div class="form-group ">
@@ -459,7 +414,7 @@
                   </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit">가입</button>
+                      <button class="btn btn-theme" onclick="join()" >가입</button>
                       <button class="btn btn-theme04" type="button" onclick="location.href='../bj/main.do'">취소</button>
                     </div>
                   </div>
@@ -508,6 +463,81 @@
   <script src="../lib/common-scripts.js"></script>
   <!--script for this page-->
   <script src="../lib/form-validation-script.js"></script>
+
+<script>
+var formckemail = 0;
+$("#Username").on("change keyup paste", function() {
+	   console.log("formckemail:"+formckemail);
+	   if(formckemail==1)//중복처리된상태
+	   {
+		   formckemail=0;
+	      //$(".joincheckbtn").attr('class','btn btn-success');//클래스 변경
+	       $("#bubu").val("중복체크");//글자변경
+	   }
+	});  
+
+
+
+	function join() {
+		var password = document.getElementById("password").value;
+		var confirm_password = document.getElementById("confirm_password").value;
+
+		if (formckemail == 0) {
+			alert('중복확인이 안되었습니다.');
+			return;
+		}
+
+		if (Username.length == 0) {
+			alert('닉네임을 입력해주세요.');
+			return;
+		}
+
+		if (password != confirm_password) {
+			alert('비밀번호가 일치하지 않습니다.');
+			return;
+		}
+		
+		alert('회원가입 성공');
+		var obj = document.getElementById('signupForm');
+		obj.submit();
+	}
+
+	function checkemailfunc() {
+		console.log("ckemail!");
+		var ckemail = $("#Username").val();
+		if (ckemail.length < 1) {
+			alert("이메일을 입력해주세요");
+			return;
+		}
+
+		jQuery.ajax({
+			type : "GET",
+			url : "/webhdd/ig/checkemail.do?ckemail=" + ckemail,
+			success : function(data) {
+				console.log("data:" + data);
+				if (data == "ok") //사용해도됨
+				{
+					formckemail = 1;
+					/* $(".joinoverlapbtn").attr('class','joincheckbtn w-button');//클래스 변경 */
+					$("#bubu").val("확인됨");//글자변경
+				} else {
+					formckemail = 0;
+					alert("이미 있는 아이디 입니다");
+					/* $(".joincheckbtn").attr('class','joinoverlapbtn w-button');//클래스 변경 */
+					$("#bubu").val("중복체크");//글자변경
+				}
+				console.log("formckemail:" + formckemail);
+
+			},
+			complete : function(data) {
+			},
+			error : function(xhr, status, error) {
+				console.log("ajax ERROR!!! : ");
+			}
+		});
+
+	}
+</script>
 
 </body>
 

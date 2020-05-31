@@ -19,6 +19,14 @@
 		user( id ,pw, nickname )
 		values( #username#,#password#,#nickname#)
 	</insert>
+	
+	<select id="selectCkid" resultClass="EgovMap">
+        <![CDATA[
+            SELECT *
+            FROM user
+            where id = #ckid#
+        ]]>
+</select>
 
 	
 
