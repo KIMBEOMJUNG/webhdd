@@ -376,9 +376,9 @@
             <div class="col-lg-10 col-lg-offset-1">
               <div class="invoice-body">
                 <div class="pull-left">
-                  <h1>화끈한 자료</h1><br>
+                  <h1>${item.title}</h1><br>
                   <address>
-                    <h4><i class="fa fa-user-circle-o" aria-hidden="true"></i>&emsp;<strong>박재혁</strong></h4>
+                    <h4><i class="fa fa-user-circle-o" aria-hidden="true"></i>&emsp;<strong>${item.nickname}</strong></h4>
 
                   </address>
                 </div>
@@ -394,13 +394,15 @@
                 <br>
                 <div class="row">
                   <div class="col-md-9">
-                    <h4>상세 설명 : 뜬밤</h4>
-                    <address>
-                  <strong>Enterprise Corp.</strong><br>
-                  234 Great Ave, Suite 600<br>
-                  San Francisco, CA 94107<br>
-                  <abbr title="Phone">P:</abbr> (123) 456-7890
-                </address>
+           
+                
+                  <strong>업로드 날짜 :${item.date}</strong><br>
+                  
+                  <h4>상세 설명 :<br> ${item.context}</h4>
+                 	  
+                  	  <br>
+                 
+               
                   </div>
                   <!-- /col-md-9 -->
                   <div class="col-md-3">

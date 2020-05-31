@@ -29,33 +29,14 @@
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/style-responsive.css" rel="stylesheet">
   <script src="../lib/chart-master/Chart.js"></script>
-  <!-- <script>
-	function Posts(){
-		var i=0;
-		var title=['이민기','박재혁','김범중','민인규','이민기','박재혁','김범중','민인규','이민기','박재혁','김범중','민인규','이민기','박재혁','김범중','민인규'];
-		var preview=['이민기 test.','박재혁 test.','김범중 test.','민인규 test.','이민기 test.','박재혁 test.','김범중 test.','민인규 test.','이민기 test.','박재혁 test.','김범중 test.','민인규 test.','이민기 test.','박재혁 test.','김범중 test.','민인규 test.'];
-		var url = ['mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html','mail_view.html'];
-		while(i<16){
-			document.write('<tr class="unread">');
-			document.write('<td class="inbox-small-cells">');
-			document.write('  <input type="checkbox" class="mail-checkbox">');
-			document.write('</td>');
-			document.write('<td class="inbox-small-cells"><i class="fa fa-star"></i></td>');
-			document.write('<td class="view-message  dont-show"><a href="'+url[i]+'">'+title[i]+'</a></td>');
-			document.write('<td class="view-message "><a href="'+url[i]+'">'+ preview[i] +'</a></td>');
-			document.write('<td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>');
-			document.write('<td class="view-message  text-right">08:10 AM</td>');
-			document.write('</tr>');
-			i=i+1;
-		}
-	 }
-   </script> -->
-   <script>
-	function Usepercent(userpercent,use){
-		document.write('<h3>'+ userpercent +'% 사용중</h3>');
-		document.write('<h5>'+use+'Mb/1Gb 여유공간 '+(1024-use)+'Mb</h5>');
-	}
-   </script>
+    <script>
+           function fn_egov_link_page(pageNo){
+              document.listForm.pageIndex.value = pageNo;
+              document.listForm.action = "<c:url value='/mg/mgtest.do'/>";
+                 document.listForm.submit();
+           }
+</script>
+
 
   <!-- =======================================================
     Template Name: Dashio
@@ -402,21 +383,7 @@
         <!-- page start-->
         <div class="row mt">
           <div class="col-sm-3">
-            <!-- <section class="panel">
-              <div class="panel-body">
-                <a href="mail_compose.html" class="btn btn-compose">
-                  <i class="fa fa-pencil"></i>  게시글 작성
-                  </a>
-                <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li class="active"><a href="inbox.html"> <i class="fa fa-list"></i> 공개 게시판  <span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li><a href="#"> <i class="fa fa-list"></i> 비공개 게시판 </a></li>
-                  <li><a href="#"> <i class="fa fa-star"></i> 즐겨찾기 </a></li>
-                  <li><a href="#"> <i class="fa fa-list"></i> 내가 작성한 게시글 <span class="label label-info pull-right inbox-notification">8</span></a></a>
-                  </li>
-                  <li><a href="#"> <i class="fa fa-trash-o"></i>쓰레기 통</a></li>
-                </ul>
-              </div>
-            </section> -->
+ 
             <section class="panel">
               <div class="panel-body"> 
               <div>               
@@ -432,32 +399,7 @@
                 </ul>
               </div>
             </section>
-            <section class="panel">
-              <div class="green-panel pn">
-                  <div class="green-header">
-                    <h5>남은 공간</h5>
-                  </div>
-                  <canvas id="serverstatus03" height="110" width="120"></canvas>
-                  <script>
-                  	var space = 1024;
-                  	var use = 720;
-                  	var usepercent;
-                  	usepercent= Math.round(((space-use)/1024)*100);
-                    var doughnutData = [{
-                        value: 100-usepercent,
-                        color: "#2b2b2b"
-                      },
-                      {
-                        value: usepercent,
-                        color: "#fffffd"
-                      }
-                    ];
-                    var myDoughnut = new Chart(document.getElementById("serverstatus03").getContext("2d")).Doughnut(doughnutData);
-                    Usepercent(100-usepercent,use);
-                  </script>
 
-             </div>
-           </section>
           </div>  
           <div class="col-sm-9">
             <section class="panel">
@@ -466,6 +408,22 @@
                     	게시판
                 </h4>                   
               </header>
+<!------------------------------------------- 검색창 ----------------------------------------------------->
+              <div class="panel-body minimal">
+              	<div class="row">
+              		<div class="col-sm-9">
+              			<form action="#" class="mail-src-position">
+                    		<div class="input-append">
+								<input type="text" class="form-control " placeholder="">
+							</div>
+                		</form>
+                	</div>	
+					<div class="btn-group">
+						<button type="button" class="btn btn-default" onclick="location.href='inbox.html'"><i class="fa fa-search"></i></button>
+                 	</div>
+              	</div>
+<!--------------------------------------------검색창 끝---------------------------------------------------->
+              	<!--  -->
               <div class="panel-body minimal">
                 <div class="mail-option">
                   <div class="chk-all">
@@ -513,17 +471,10 @@
                       <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
                     </ul>
                   </div>
-                  <ul class="unstyled inbox-pagination">
-                    <li><span>1-50 of 99</span></li>
-                    <li>
-                      <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
-                    </li>
-                    <li>
-                      <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
-                    </li>
-                  </ul>
+
                 </div>
                 <div class="table-inbox-wrap ">
+                <!-- 게시글 목록  -->
                   <table class="table table-inbox table-hover">
                     <tbody>
                       
@@ -534,23 +485,31 @@
                           <input type="checkbox" class="mail-checkbox">
                         </td>
                         <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                        <td class="view-message dont-show"><a href="mail_view.html">작성자</a></td>
+                        <td class="view-message dont-show"><a href="/webhdd/park/board_detail.do?idx=${item.idx}">작성자</a></td>
                         <td class="view-message"><a href="/webhdd/park/board_detail.do?idx=${item.idx}">${item.title}</a></td>
                         <td class="view-message inbox-small-cells"></td>
                         <td class="view-message text-right">${item.date }</td> 
                       </tr>
                       
                       </c:forEach>
-                      
-                      
-                      
-                      
+
                       
                     </tbody>
                   </table>
-                  <ui:pagination paginationInfo="${paginationInfo }" type="image" jsFunction="fn_egov_link_page"/>
+                  <!-- 페이지 -->
+   			<ui:pagination paginationInfo="${paginationInfo }" type="image" jsFunction="fn_egov_link_page"/>             
 			<form action="/webhdd/park/park.do" name="listForm" id="listForm">
-  			 <input type="hidden" name="pageIndex" value="1"/>   
+  			 <input type="hidden" name="pageIndex" value="1"/>
+  			 <!-- 페이지 버튼 -->
+  			 <ul class="unstyled inbox-pagination">
+                <li><span>1-50 of 99</span></li>
+                <li>
+                   <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
+                </li>
+                <li>
+                   <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
+                </li>
+             </ul>   
 			</form>
                 </div>
               </div>
