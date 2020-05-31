@@ -396,9 +396,9 @@
                   <div class="col-md-9">
            
                 
-                  <strong>업로드 날짜 :${item.date}</strong><br>
+                  <strong>업로드 날짜 :${item.date}</strong><br><br>
                   
-                  <h4>상세 설명 :<br> ${item.context}</h4>
+                  <h4>상세 설명 :<br><br> ${item.context}</h4>
                  	  
                   	  <br>
                  
@@ -431,20 +431,14 @@
                   </thead>
                   <tbody>
 
-                    <tr>
-                      <td class="text-center">1</td>
-                      <td>받아가요~</td>
-                      <td class="text-right">관리자</td>
-                      <td class="text-right">김범중</td>
-                    </tr>
-
+                    <c:forEach var="result" items="${comment}">
                     <tr>
                       <td class="text-center">2</td>
-                      <td>오늘은 이거다!!</td>
+                      <td>${result.comment}</td>
                       <td class="text-right">일반 사용자</td>
-                      <td class="text-right">이민기</td>
+                      <td class="text-right">${result.nickname}</td>
                     </tr>
-
+					</c:forEach>
 
                   </tbody>
                 </table>
