@@ -33,6 +33,11 @@
   		FROM user
   		where idx=#idx#
 	</select>
+	<select id="detail" resultClass="egovMap">
+ 		SELECT * 
+        FROM filelist left join user on   filelist.useridx = user.idx
+        where filelist.idx=#idx#
+	</select>
     
     
 
