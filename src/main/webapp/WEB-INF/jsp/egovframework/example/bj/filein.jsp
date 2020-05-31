@@ -75,16 +75,17 @@
                     <span class="help-block">파일의 제목을 입력해주세요</span>
                   </div>
                 </div>
-                <div class="form-group " style="padding-bottom: 0px;margin-bottom: 0px;">
-                    <label for="agree" class="control-label col-lg-2 col-sm-3">전체공개</label>
-                    <div class="col-lg-10 col-sm-9">
-                      <input type="checkbox" style="width: 20px" class="checkbox form-control" id="agree" value="1" name="se">
-                    </div>
+                
+                  
+                 <div class="form-group">
+                  <label class="control-label col-md-3">전체공개</label>
+                  <label class="control-label col-md-3">
                    
-                    
-                      
-                    
-                  </div>
+                <input type="checkbox" id="inlineCheckbox3" value="1" name="se">
+                   </label>
+                  
+                </div> 
+                 
                 <div class="form-group " style="padding-bottom: 0px;">
                     <label for="ccomment" class="control-label col-lg-2">상세설명</label>
                     <div class="col-lg-10">
@@ -92,12 +93,20 @@
                     </div>
                   </div>
                 
-                <!-- <div class="form-group">
-                  <label class="control-label col-md-3">Default</label>
+                 <div class="form-group">
+                  <label class="control-label col-md-3">카테고리</label>
                   <div class="col-md-4">
-                    <input type="file" class="default" />
+                    
+                <select class="form-control" name="type">
+                  <option value="0" selected="selected">동영상</option>
+                  <option value="1">사진</option>
+                  <option value="2">문서</option>
+                  <option value="3">음악</option>
+                </select>
+              
+                
                   </div>
-                </div> -->
+                </div>
                 <div class="form-group" style="padding-bottom: 0px;">
                   <label class="control-label col-md-3">업로드 파일 선택</label>
                   <div class="controls col-md-9">

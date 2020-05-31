@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -50,10 +51,12 @@ public class bjController {
 		String title = ""+request.getParameter("title");
 		String context = ""+request.getParameter("context");
 		String se = ""+request.getParameter("se");
+		String type = ""+request.getParameter("type");
 		String fileName = FileUpload(request);
 		EgovMap in =new EgovMap();
 		in.put("title", title);
 		in.put("context", context);
+		in.put("type", type);
 		System.out.println("se:"+se);
 		if(se.compareTo("1") == 0)
 		{
@@ -93,6 +96,14 @@ public class bjController {
 		paginationInfo.setTotalRecordCount(Integer.parseInt(total));
 		model.addAttribute("paginationInfo", paginationInfo);
 		return "bj/admin";
+	}
+	
+	@RequestMapping(value = "/logout/inputProcess.do")
+	public String inputProcesslogout(HttpServletRequest request, ModelMap model) throws Exception {
+		HttpSession session = request.getSession();
+		session.setAttribute("useremail", null);
+		session.setAttribute("useridx", null);
+		return "redirect:/mg/test.do";
 	}
 	
 	
