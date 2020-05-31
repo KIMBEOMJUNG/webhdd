@@ -394,14 +394,15 @@
                 <br>
                 <div class="row">
                   <div class="col-md-9">
-                    <h4>상세 설명 : 좋은 자료</h4>
-                    <address>
-                  <strong>업로드 날짜 :${item.data}</strong><br>
-                  ${item.context}
-                 	  <br>
+           
+                
+                  <strong>업로드 날짜 :${item.date}</strong><br>
+                  
+                  <h4>상세 설명 :<br> ${item.context}</h4>
+                 	  
                   	  <br>
                  
-                </address>
+               
                   </div>
                   <!-- /col-md-9 -->
                   <div class="col-md-3">
