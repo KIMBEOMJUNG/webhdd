@@ -28,5 +28,13 @@
             FROM filelist
         ]]>
     </select>
+	<select id="getLogin" resultClass="EgovMap">
+        <![CDATA[
+            SELECT *
+            FROM user
+            where id = #email# and pw = #pw#
+        ]]>
+	</select>
+
 
 </sqlMap>

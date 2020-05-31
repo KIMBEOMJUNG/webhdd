@@ -43,23 +43,18 @@
       *********************************************************************************************************************************************************** -->
   <div id="login-page">
     <div class="container">
-      <form class="form-login" action="index.html">
+      <form class="form-login" action="/webhdd/mg/login.do">
         <h2 class="form-login-heading">로그인</h2>
         <div class="login-wrap">
-          <input type="text" class="form-control" placeholder="User ID" autofocus>
+          <input type="text" id="id" name="id" class="form-control" placeholder="User ID" autofocus>
           <br>
-          <input type="password" class="form-control" placeholder="Password">
-          <label class="checkbox">
-            <input type="checkbox" value="remember-me"> 비밀번호 저장
-            <span class="pull-right">
-            <a data-toggle="modal" href="login.html#myModal"> 비밀번호를 잊으셨나요?</a>
-            </span>
-            </label>
+          <input type="password" id="pw" name="pw" class="form-control" placeholder="Password">
+          <br>
           <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> 로그인</button>
           <hr>
           <div class="registration">
             	아직 회원가입을 안하셨나요?<br/>
-            <a class="" href="#">
+            <a class="" href="/webhdd/ig/igfn.do">
               	회원가입
               </a>
           </div>
