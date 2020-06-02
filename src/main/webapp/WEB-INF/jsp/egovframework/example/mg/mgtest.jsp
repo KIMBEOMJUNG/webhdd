@@ -411,17 +411,30 @@
 <!------------------------------------------- 검색창 ----------------------------------------------------->
               <div class="panel-body minimal">
               	<div class="row">
-              		<div class="col-sm-9">
-              			<form action="#" class="mail-src-position">
-                    		<div class="input-append">
-								<input type="text" class="form-control " placeholder="">
-							</div>
-                		</form>
-                	</div>	
-					<div class="btn-group">
-						<button type="button" class="btn btn-default" onclick="location.href='inbox.html'"><i class="fa fa-search"></i></button>
-                 	</div>
+              		  <div class="form-group ">
+              		  <div style="width:100%">
+              		  	<div style="width:2%;float: left;">
+              		 	 &nbsp;
+              		  	</div>
+                     	<div id="input" style="width:97%;float: left;">
+                       	 	<input class=" form-control"  id="cname" name="name" minlength="2" placeholder="검색어를 입력하세요." type="text" required />
+                    	</div>
+
+                      </div>
+                      <div style="width:100%">
+                        <br>
+                     	<br>
+                     	<div style="width:1%;float: right;">
+                     	&nbsp;
+                     	</div>
+                     	<div id="submit" style="width:99%;float: right;">
+                      			<button class="btn btn-theme"  style="float: right;" type="submit">검색</button>
+                     	</div>
+                      </div>
+
+                      </div>
               	</div>
+              </div>
 <!--------------------------------------------검색창 끝---------------------------------------------------->
               	<!--  -->
               <div class="panel-body minimal">
@@ -487,7 +500,7 @@
                         <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
                         <td class="view-message dont-show"><a href="/webhdd/park/board_detail.do?idx=${item.idx}">작성자</a></td>
                         <td class="view-message"><a href="/webhdd/park/board_detail.do?idx=${item.idx}">${item.title}</a></td>
-                        <td class="view-message inbox-small-cells"></td>
+                        <td class="view-message inbox-small-cells" ></td>
                         <td class="view-message text-right">${item.date }</td> 
                       </tr>
                       

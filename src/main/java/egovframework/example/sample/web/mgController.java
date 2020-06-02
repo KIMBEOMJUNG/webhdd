@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -57,6 +58,32 @@ public class mgController {
    model.addAttribute("resultList", list);*/
       return "mg/test";
    }
+   
+   @RequestMapping(value = "/mg/login.do")
+   public String inputProcess(HttpServletRequest request, ModelMap model) throws Exception {
+      String email = request.getParameter("id");
+      String pw = request.getParameter("pw");
+      
+      EgovMap in = new EgovMap();
+      in.put("email", email);
+      in.put("pw", pw);
+      
+      EgovMap ed = (EgovMap) sampleDAO.select("getLogin", in);
+      if(ed ==null)
+         return "redirect:/mg/test.do"; 
+      
+      else{
+         HttpSession session = request.getSession();
+         session.setAttribute("useremail", ed.get("email"));
+         String useremail = ""+session.getAttribute("useremail");
+         String useridx = ""+session.getAttribute("idx");
+         System.out.println("useremail:"+useremail);
+      }
+         
+      model.addAttribute("item", ed);
+      return "redirect:/mg/mgtest.do"; 
+   }
+
 
    
    

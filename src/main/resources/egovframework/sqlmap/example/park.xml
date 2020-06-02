@@ -38,6 +38,12 @@
         FROM filelist left join user on   filelist.useridx = user.idx
         where filelist.idx=#idx#
 	</select>
+	
+	<select id="comment" resultClass="egovMap">
+ 		SELECT *
+ 		FROM  bord_comment  left join  user on  bord_comment.user_idx = user.idx        
+ 		where bord_idx=#idx#
+	</select>
     
     
 

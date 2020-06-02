@@ -25,8 +25,8 @@
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
         
-        <li><a class="logout" href="#" style="background:black">ID:</a></li>
-          <li><a class="logout" href="login.html">로그아웃</a></li>
+        <li><a class="logout" href="#" style="background:black">ID: ${useremail}</a></li>
+          <li><a class="logout" href="/webhdd/logout/inputProcess.do">로그아웃</a></li>
         </ul>
       </div>
     </header>
