@@ -25,7 +25,7 @@
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
         
-        <li><a class="logout" href="#" style="background:black">ID: ${useremail}</a></li>
+        <li><a class="logout" href="#" style="background:black">ID: ${id}</a></li>
           <li><a class="logout" href="/webhdd/logout/inputProcess.do">로그아웃</a></li>
         </ul>
       </div>
@@ -49,13 +49,13 @@
          <!-- <h5 class="centered">Sam Soffes</h5> -->
          
           <li class="mt">
-            <a href="/webhdd/bj/admin.do">
+            <a href="/webhdd/mg/mgtest.do">
               <!-- <i class="fa fa-desktop"></i> -->
               <i class="fa fa-hdd-o"></i>
               <span>내 파일</span>
               </a>
               
-              <a href="/webhdd/bj/admin.do">
+              <a href="/webhdd/mg/mgtest.do">
               <i class="fa fa-group"></i>
               <span>전체공개 파일</span>
               </a>
