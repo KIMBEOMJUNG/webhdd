@@ -10,26 +10,27 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="Dashboard">
-  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="Dashboard">
+<meta name="keyword"
+	content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+<title>Dashio - Bootstrap Admin Template</title>
 
-  <!-- Favicons -->
-  <link href="../img/favicon.png" rel="icon">
-  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+<!-- Favicons -->
+<link href="../img/favicon.png" rel="icon">
+<link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Bootstrap core CSS -->
-  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!--external css-->
-  <link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/style-responsive.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--external css-->
+<link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<!-- Custom styles for this template -->
+<link href="../css/style.css" rel="stylesheet">
+<link href="../css/style-responsive.css" rel="stylesheet">
 
-  <!-- =======================================================
+<!-- =======================================================
     Template Name: Dashio
     Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
     Author: TemplateMag.com
@@ -372,7 +373,7 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> 회원가입</h3>
+        <h3><i class="fa fa-angle-right"></i>가입하기</h3>
           </div>
         </div>
           </div>
@@ -381,23 +382,22 @@
         <!-- /row -->
         <div class="row mt">
           <div class="col-lg-12">
-            <h4><i class="fa fa-angle-right"></i> Advanced Form Validations</h4>
+            <h4><i class="fa fa-angle-right"></i> 빠르고 쉽습니다.</h4>
             <div class="form-panel">
               <div class="form">
-                <form class="cmxform form-horizontal style-form" id="signupForm" action="/webhdd/ig/joinprocess.do">
+                <form class="cmxform form-horizontal style-form" id="signupForm" action="/webhdd/ig/joinprocess.do"
+                onsubmit='return checkValue()'>
                   <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2">username</label>
+                    <label for="Username" class="control-label col-lg-2">Username</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="username" name="username" type="text" />
-                      <div style="margin-top:12px;">
-				      	<button class="btn btn-theme" type="submit">중복 확인</button>
-				      </div>
+                      <input class="form-control " id="Username" name="Username" type="text" /> 
+                      <input class="btn btn-theme" style="margin-top:12px;" id="bubu" type="button" value="중복 확인" onclick="checkemailfunc()">
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="nickname" class="control-label col-lg-2">nickname</label>
+                    <label for="Nickname" class="control-label col-lg-2">Nickname</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="nickname" name="nickname" type="text" />
+                      <input class="form-control " id="Nickname" name="Nickname" type="text" />
                     </div>
                   </div>
                   <div class="form-group ">
@@ -414,8 +414,8 @@
                   </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit">가입</button>
-                      <button class="btn btn-theme04" type="button">Cancel</button>
+                      <button class="btn btn-theme" onclick="join()" >가입</button>
+                      <button class="btn btn-theme04" type="button" onclick="location.href='../bj/main.do'">취소</button>
                     </div>
                   </div>
                 </form>
@@ -463,6 +463,81 @@
   <script src="../lib/common-scripts.js"></script>
   <!--script for this page-->
   <script src="../lib/form-validation-script.js"></script>
+
+<script>
+var formckemail = 0;
+$("#Username").on("change keyup paste", function() {
+	   console.log("formckemail:"+formckemail);
+	   if(formckemail==1)//중복처리된상태
+	   {
+		   formckemail=0;
+	      //$(".joincheckbtn").attr('class','btn btn-success');//클래스 변경
+	       $("#bubu").val("중복체크");//글자변경
+	   }
+	});  
+
+
+
+	function join() {
+		var password = document.getElementById("password").value;
+		var confirm_password = document.getElementById("confirm_password").value;
+
+		if (formckemail == 0) {
+			alert('중복확인이 안되었습니다.');
+			return;
+		}
+
+		if (Username.length == 0) {
+			alert('닉네임을 입력해주세요.');
+			return;
+		}
+
+		if (password != confirm_password) {
+			alert('비밀번호가 일치하지 않습니다.');
+			return;
+		}
+		
+		alert('회원가입 성공');
+		var obj = document.getElementById('signupForm');
+		obj.submit();
+	}
+
+	function checkemailfunc() {
+		console.log("ckemail!");
+		var ckemail = $("#Username").val();
+		if (ckemail.length < 1) {
+			alert("이메일을 입력해주세요");
+			return;
+		}
+
+		jQuery.ajax({
+			type : "GET",
+			url : "/webhdd/ig/checkemail.do?ckemail=" + ckemail,
+			success : function(data) {
+				console.log("data:" + data);
+				if (data == "ok") //사용해도됨
+				{
+					formckemail = 1;
+					/* $(".joinoverlapbtn").attr('class','joincheckbtn w-button');//클래스 변경 */
+					$("#bubu").val("확인됨");//글자변경
+				} else {
+					formckemail = 0;
+					alert("이미 있는 아이디 입니다");
+					/* $(".joincheckbtn").attr('class','joinoverlapbtn w-button');//클래스 변경 */
+					$("#bubu").val("중복체크");//글자변경
+				}
+				console.log("formckemail:" + formckemail);
+
+			},
+			complete : function(data) {
+			},
+			error : function(xhr, status, error) {
+				console.log("ajax ERROR!!! : ");
+			}
+		});
+
+	}
+</script>
 
 </body>
 
