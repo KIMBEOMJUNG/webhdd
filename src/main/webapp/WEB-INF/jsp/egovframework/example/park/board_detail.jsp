@@ -390,15 +390,16 @@
                 <br>
                 <br>
                 <button type="button"  class="btn btn-primary btn-lg">다운로드</button>
-                <br>
-                <br>
+                <div style="float: right;"> <strong>업로드 날짜 :${item.date}</strong></div><br><br>
                 <div class="row">
                   <div class="col-md-9">
            
                 
-                  <strong>업로드 날짜 :${item.date}</strong><br><br>
-                  
-                  <h4>상세 설명 :<br><br> ${item.context}</h4>
+                
+                 
+                  <br>
+                  <br>
+                  <h4>파일 설명 :<br><br> ${item.context}</h4>
                  	  
                   	  <br>
                  
@@ -415,8 +416,13 @@
                 </div>
                 <br>
                 <br>
+                <%int i = 0;
+                  int j = 0;%>
+                 <c:forEach var="result" items="${comment}">
+                  <%i++; %>
+                 </c:forEach>
                  <div class="well well-small green">
-                      <div > 댓글 : 2 개</div>
+                      <div > 댓글 : <%=i %> 개</div>
                       <div class="clearfix"></div>
                     </div>
                 <!-- /col-lg-10 -->
@@ -430,16 +436,23 @@
                     </tr>
                   </thead>
                   <tbody>
-
+ 					
                     <c:forEach var="result" items="${comment}">
+                    <%j++; %>
                     <tr>
-                      <td class="text-center">2</td>
+                      <td class="text-center"><%=j %></td>
                       <td>${result.comment}</td>
-                      <td class="text-right">일반 사용자</td>
+                       <c:if test="${result.grade==0}">
+                  		 <td class="text-right">일반 사용자</td>
+                 	   </c:if >
+                 	    <c:if test="${result.grade==1}">
+                  		 <td class="text-right">관리자</td>
+                 	   </c:if >
+                      
                       <td class="text-right">${result.nickname}</td>
                     </tr>
+                   
 					</c:forEach>
-
                   </tbody>
                 </table>
               <div class=" form">
@@ -452,9 +465,11 @@
                       <div class="col-lg-10">
                       
                         <input class=" form-control"  id="cname" name="name" minlength="2" type="text" required />
+                        
                       </div>
                       <button class="btn btn-theme"  style="float: right;" type="submit">등록</button>
                     </div>
+                    
                     <div class="form-group">
                       <div class="col-lg-offset-2 col-lg-10">
                         
