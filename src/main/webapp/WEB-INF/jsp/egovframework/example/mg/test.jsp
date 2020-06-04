@@ -44,7 +44,7 @@
   <div id="login-page">
     <div class="container">
       <form class="form-login" action="/webhdd/mg/login.do">
-        <h2 class="form-login-heading">로그인</h2>
+        <h2 class="form-login-heading">나만의 웹하드</h2>
         <div class="login-wrap">
           <input type="text" id="id" name="id" class="form-control" placeholder="User ID" autofocus>
           <br>
