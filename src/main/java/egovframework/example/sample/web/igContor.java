@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import egovframework.example.sample.service.impl.SampleDAO;
@@ -39,15 +40,29 @@ public class igContor {
 	 @RequestMapping(value="/ig/joinprocess.do")
 	   public String inputprocess(HttpServletRequest request, ModelMap model) throws Exception
 	   {
-	      String username = ""+request.getParameter("username");
+	      String Username = ""+request.getParameter("Username");
 	      String password = ""+request.getParameter("password");
-	      String nickname = ""+request.getParameter("nickname");
+	      String Nickname = ""+request.getParameter("Nickname");
 	      
 	      EgovMap in =new EgovMap();
-	      in.put("username", username);
+	      in.put("Username", Username);
 	      in.put("password", password);
-	      in.put("nickname", nickname);
+	      in.put("Nickname", Nickname);
 	      sampleDAO.insert("join",in);
 	      return "redirect:/ig/igfn.do";
 	   }
+	 
+	 @ResponseBody
+	 @RequestMapping(value = "/ig/checkemail.do")
+	 public String checkid(HttpServletRequest request, ModelMap model) throws Exception
+	 {
+	    String ckid = request.getParameter("ckemail");
+	    EgovMap in = new EgovMap();
+	    in.put("ckid", ckid);
+	    EgovMap ed = (EgovMap) sampleDAO.select("selectCkid", in);
+	    if(ed == null)//중복되지 않은 값
+	       return "ok";
+	    else//중복됨 사용못하는 값
+	       return "fail";      
+	 }
 }

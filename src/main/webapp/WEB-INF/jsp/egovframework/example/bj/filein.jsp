@@ -75,16 +75,17 @@
                     <span class="help-block">파일의 제목을 입력해주세요</span>
                   </div>
                 </div>
-                <div class="form-group " style="padding-bottom: 0px;margin-bottom: 0px;">
-                    <label for="agree" class="control-label col-lg-2 col-sm-3">전체공개</label>
-                    <div class="col-lg-10 col-sm-9">
-                      <input type="checkbox" style="width: 20px" class="checkbox form-control" id="agree" value="1" name="se">
-                    </div>
+                
+                  
+                 <div class="form-group">
+                  <label class="control-label col-md-3">전체공개</label>
+                  <label class="control-label col-md-3">
                    
-                    
-                      
-                    
-                  </div>
+                <input type="checkbox" id="inlineCheckbox3" value="1" name="se">
+                   </label>
+                  
+                </div> 
+                 
                 <div class="form-group " style="padding-bottom: 0px;">
                     <label for="ccomment" class="control-label col-lg-2">상세설명</label>
                     <div class="col-lg-10">
@@ -92,20 +93,28 @@
                     </div>
                   </div>
                 
-                <!-- <div class="form-group">
-                  <label class="control-label col-md-3">Default</label>
+                 <div class="form-group">
+                  <label class="control-label col-md-3">카테고리</label>
                   <div class="col-md-4">
-                    <input type="file" class="default" />
+                    
+                <select class="form-control" name="type">
+                  <option value="0" selected="selected">동영상</option>
+                  <option value="1">사진</option>
+                  <option value="2">문서</option>
+                  <option value="3">음악</option>
+                </select>
+              
+                
                   </div>
-                </div> -->
+                </div>
                 <div class="form-group" style="padding-bottom: 0px;">
-                  <label class="control-label col-md-3">업로드 파일 선택</label>
+                  <label class="control-label col-md-3">업로드 파일 선택<br>(30MB이하의 파일만 업로드 가능합니다.)</label>
                   <div class="controls col-md-9">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <div class="fileupload fileupload-new" data-provides="fileupload" >
                       <span class="btn btn-theme02 btn-file">
                         <span class="fileupload-new"><i class="fa fa-paperclip"></i> Select file</span>
                       <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
-                      <input type="file" name="files" id="files" class="default" />
+                      <input type="file" onchange="checkFile(this)" name="files" id="files" class="default" />
                       </span>
                       <span class="fileupload-preview" style="margin-left:5px;"></span>
                       <a href="advanced_form_components.html#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
@@ -187,34 +196,69 @@
   <script src="../lib/advanced-form-components.js"></script>
 
 <script>
+var filech = 0;
+
 	function submits(){
 		var title = document.getElementById("title").value;
 		var context = document.getElementById("context").value;
 		var filess= document.getElementById("files").value;
-
+		
+		
 		if(title.length == 0){
 			console.log("title:"+title);
 			alert('제목을 입력해주세요.');
 			return;
 		}
-		
-		if(filess.length == 0){
-			console.log("filess:"+filess);
-			alert('파일을 선택해주세요.');
-			return;
-		}
-		
 		if(context.length == 0){
 			console.log("context:"+context);
 			alert('설명을 입력해주세요.');
 			return;
 		}
+		if(filess.length == 0){
+			console.log("filess:"+filess);
+			alert('파일을 선택해주세요.');
+			return;
+		}
+		if(filech == 0){
+			console.log("filess:"+filess);
+			alert('용량을 초과하는 파일입니다.');
+			return;
+		}
+		
 
 		var obj = document.getElementById('joinform');
 		obj.submit();
 
 		
 	}
+	
+	function checkFile(el){
+
+		// files 로 해당 파일 정보 얻기.
+		var file = el.files;
+
+		// file[0].size 는 파일 용량 정보입니다.
+		if(file[0].size > 1024 * 1024 * 30){
+			// 용량 초과시 경고후 해당 파일의 용량도 보여줌
+			alert('30MB 이하 파일만 등록할 수 있습니다.\n\n' + '현재파일 용량 : ' + (Math.round(file[0].size / 1024 / 1024 * 100) / 100) + 'MB');
+		}
+		
+		// 체크를 통과했다면 종료.
+		else{
+			filech = 1;
+			console.log("용량체크:"+filech)
+			return;
+		} 
+
+		// 체크에 걸리면 선택된 내용 취소 처리를 해야함.
+		// 파일선택 폼의 내용은 스크립트로 컨트롤 할 수 없습니다.
+		// 그래서 그냥 새로 폼을 새로 써주는 방식으로 초기화 합니다.
+		// 이렇게 하면 간단 !?
+		
+	}
+	
+	
+	
 </script>
 
 
