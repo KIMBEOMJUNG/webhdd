@@ -32,8 +32,8 @@
     
     <insert id="inputimg" parameterClass="egovMap">
 	insert  into 
-	filelist( title ,context, files, date ,security ) 
-	values( #title#,#context#,#img#, now() , #se#) 
+	filelist( title ,context, files, date ,security,type,useridx ) 
+	values( #title#,#context#,#img#, now() , #se#,#type#,#uuidx#) 
 </insert>
     
     

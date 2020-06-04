@@ -52,6 +52,7 @@
         TOP BAR CONTENT & NOTIFICATIONS
         *********************************************************************************************************************************************************** -->
     <!--header start-->
+<<<<<<< HEAD
     <header class="header black-bg">
       <div class="sidebar-toggle-box">
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
@@ -373,6 +374,10 @@
         <!-- sidebar menu end-->
       </div>
     </aside>
+=======
+    
+    <c:import url="/frame/top.do" />
+>>>>>>> 40d3197ae5d84d51e3a04da747018fd3dbd64944
     <!--sidebar end-->
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
@@ -390,10 +395,10 @@
                  <h3 > <i class="fa fa-align-justify"></i>  카테고리</h3>
                </div>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li class="active"><a href="inbox.html"> <i class="fa fa-film"></i> 동영상  <span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li class="active"><a href="inbox.html"> <i class="fa fa-film"></i> 동영상  <!-- <span class="label label-theme pull-right inbox-notification">3</span> --></a></li>
                   <li><a href="#"> <i class="fa fa-camera"></i> 사진 </a></li>
                   <li><a href="#"> <i class="fa fa-file-text-o"></i> 문서 </a></li>
-                  <li><a href="#"> <i class="fa fa-music"></i> 음악 <span class="label label-info pull-right inbox-notification">8</span></a></a>
+                  <li><a href="#"> <i class="fa fa-music"></i> 음악 <!-- <span class="label label-info pull-right inbox-notification">8</span> --></a></a>
                   </li>
                   <li><a href="#"> <i class="fa fa-inbox"></i> 모든 파일 </a></li>
                 </ul>
