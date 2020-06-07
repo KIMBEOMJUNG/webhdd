@@ -37,16 +37,43 @@ public class mgController {
       paginationInfo.setPageSize(7);
 
       //인자생성
-      EgovMap in = new EgovMap();
-      in.put("firstindex", "" + paginationInfo.getFirstRecordIndex());
-      in.put("recordperpage", "" + paginationInfo.getRecordCountPerPage());
-      List<?> list = (List<?>) sampleDAO.list("mlist", in);
-      model.addAttribute("resultList", list);
+      String title = request.getParameter("title");
+	    EgovMap in = new EgovMap();
+	    in.put("title", title);
+	    in.put("firstindex", "" + paginationInfo.getFirstRecordIndex());
+        in.put("recordperpage", "" + paginationInfo.getRecordCountPerPage());        
+	     List<?> list = (List<?>) sampleDAO.list("mlist", in);
+	     model.addAttribute("resultList", list);
+
       EgovMap count = (EgovMap) sampleDAO.select("mlistl", in);
       String total = "" + count.get("num");
       paginationInfo.setTotalRecordCount(Integer.parseInt(total));
       model.addAttribute("paginationInfo", paginationInfo);
+      model.addAttribute("title", title);
+      
+     
       return "mg/mgtest";
+   }
+   @RequestMapping(value = "/mg/search.do")
+   public String search(HttpServletRequest request, ModelMap model) throws Exception {
+      //페이징
+	   String title = "%"+request.getParameter("title")+"%";
+	      
+	      EgovMap in = new EgovMap();
+	      in.put("title", title);
+	      
+	      EgovMap ed = (EgovMap) sampleDAO.select("search", title);
+	      if(ed ==null)
+	         return "redirect:/mg/mgtest.do"; 
+	      	
+	      else{
+	    	  List<?> list = (List<?>) sampleDAO.list("search",ed);   //Sample_sql.xml 파일 안에 select id 와 일치시켜주기!
+		      	model.addAttribute("resultList", list);
+	      }
+	         
+//	      model.addAttribute("resultList", ed);
+      
+      return "redirect:/mg/mgtest.do"; 
    }
    
    @RequestMapping(value="/mg/test.do")
@@ -84,7 +111,38 @@ public class mgController {
    }
 
 
-   
+   @RequestMapping(value = "/mg/myboard.do")
+   public String myboard(HttpServletRequest request, ModelMap model) throws Exception {
+      //페이징
+      PaginationInfo paginationInfo = new PaginationInfo();
+      if (request.getParameter("pageIndex") == null) {
+         paginationInfo.setCurrentPageNo(1);
+      } else {
+         paginationInfo.setCurrentPageNo(Integer.parseInt("" + request.getParameter("pageIndex")));
+      }
+      paginationInfo.setRecordCountPerPage(10);
+      paginationInfo.setPageSize(7);
+      HttpSession session = request.getSession();
+	    String uuidx = ""+session.getAttribute("uuidx");
+      //인자생성
+      String title = request.getParameter("title");
+	    EgovMap in = new EgovMap();
+	    in.put("uuidx", uuidx);
+	    in.put("title", title);
+	    in.put("firstindex", "" + paginationInfo.getFirstRecordIndex());
+        in.put("recordperpage", "" + paginationInfo.getRecordCountPerPage());        
+	     List<?> list = (List<?>) sampleDAO.list("mlist", in);
+	     model.addAttribute("resultList", list);
+
+      EgovMap count = (EgovMap) sampleDAO.select("mlistl", in);
+      String total = "" + count.get("num");
+      paginationInfo.setTotalRecordCount(Integer.parseInt(total));
+      model.addAttribute("paginationInfo", paginationInfo);
+      model.addAttribute("title", title);
+      
+     
+      return "mg/myboard";
+   }
    
    
 }
