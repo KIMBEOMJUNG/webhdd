@@ -1,5 +1,7 @@
 
 
+
+
 package egovframework.example.sample.web;
 
 import java.util.List;
@@ -42,6 +44,7 @@ public class mgController {
       in.put("recordperpage", "" + paginationInfo.getRecordCountPerPage());
       List<?> list = (List<?>) sampleDAO.list("mlist", in);
       model.addAttribute("resultList", list);
+      
       EgovMap count = (EgovMap) sampleDAO.select("mlistl", in);
       String total = "" + count.get("num");
       paginationInfo.setTotalRecordCount(Integer.parseInt(total));
