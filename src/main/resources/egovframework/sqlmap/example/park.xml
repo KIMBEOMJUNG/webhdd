@@ -45,6 +45,21 @@
  		where bord_idx=#idx#
 	</select>
     
-    
+    <insert id="commentinsert" parameterClass="egovMap">
+		insert into
+		bord_comment( comment ,useridx, bord_idx )
+		values( #name#,#uuidx#,#bordidx#)
+	</insert>
+	
+	
+  <update id="uesrupdata" parameterClass="egovMap">
+		UPDATE user set
+  		 id = #userid#, nickname = #username#, grade = #grade#
+		where idx = #idx#
+</update>
+
+	<delete id="del" parameterClass="egovMap">
+  	 delete from  user where idx=#idx#
+	</delete>
 
 </sqlMap>

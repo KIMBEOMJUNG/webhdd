@@ -73,9 +73,10 @@
               <!-- /col-md-4 -->
               <div class="col-md-4 centered">
                 <div class="profile-pic">
-                  <p><img src="img/ui-sam.jpg" class="img-circle"></p>
+                  <p><img src="../img/park.jpg" class="img-circle"></p>
                   <p>
-                    <button type="button" class="btn btn-danger">회원 삭제</button>
+                    <button type="button" class="btn btn-danger"  onclick="location.href='/webhdd/park/delprocess.do?idx=${data.idx}'">회원 삭제</button>
+                    
                   </p>
                 </div>
               </div>
@@ -102,52 +103,55 @@
                     <div class="row">
                       <div class="col-lg-8 col-lg-offset-2 detailed">
 
-                        <form role="form" class="form-horizontal">
+                        <form role="form" class="form-horizontal" id="commentForm" method="get" action="/webhdd/park/uesrupdata.do">
                           <div class="form-group">
                             <label class="col-lg-2 control-label">이름</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder="${data.nickname}" id="c-name" class="form-control">
+                              <input type="text" value="${data.nickname}" name = "username" id="cname" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">전화번호</label>
+                            <label class="col-lg-2 control-label">아이디</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder="${data.phoneNume} " id="lives-in" class="form-control">
+                              <input type="text" value="${data.id} " name = "userid" id="id" class="form-control">
+                                <input type="hidden" value="${data.idx} " name = "idx" id="idx" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">회원등급</label>
                             &emsp;
-                            <select style="width:300px;height:35px;">
+                            <select name="grade" style="width:300px;height:35px;">
                             
                              <c:if test="${data.grade==0}">
-                  				 <option>일반 사용자</option>
-                  				 <option>관리자</option>
+                  				 <option  value="0">일반 사용자</option>
+                  				 <option value="1">관리자</option>
                 				 </c:if >
                  			 <c:if test="${data.grade==1}">
-                 			   	<option>관리자</option>
-                              	<option>일반 사용자</option>
+                 			   	<option value="1">관리자</option>
+                              	<option value="0">일반 사용자</option>
                  				 </c:if>     
                               
                              
                             </select>
                           </div>
+					<div class="col-lg-8 col-lg-offset-2 detailed mt">
 
-
-                        </form>
-                      </div>
-                      <div class="col-lg-8 col-lg-offset-2 detailed mt">
-
-                        <form role="form" class="form-horizontal">
-
+                        
                           <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
+                            
                               <button class="btn btn-theme" type="submit">Save</button>
-                              <button class="btn btn-theme04" type="button">Cancel</button>
+                              <button class="btn btn-theme04"  onclick="location.href='/webhdd/park/park.do'" type="button">Cancel</button>
+                              
                             </div>
                           </div>
-                        </form>
+                        
                       </div>
+
+                      </form>
+                      </div>
+                      
+                      
                       <!-- /col-lg-8 -->
                     </div>
                     <!-- /row -->

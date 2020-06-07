@@ -139,7 +139,7 @@
                 </table>
               <div class=" form">
              
-                  <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
+                  <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="/webhdd/park/commentinsert.do">
                  
                 
                     <div class="form-group ">
@@ -147,7 +147,7 @@
                       <div class="col-lg-10">
                       
                         <input class=" form-control"  id="cname" name="name" minlength="2" type="text" required />
-                        
+                        <input  type="hidden"  id="bordidx" name="bordidx" value="${item.idx }"   required />
                       </div>
                       <button class="btn btn-theme"  style="float: right;" type="submit">등록</button>
                     </div>
