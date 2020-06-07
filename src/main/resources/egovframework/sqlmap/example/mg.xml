@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
 
@@ -16,17 +17,38 @@
 
 	   <select id="mlist" resultClass="EgovMap">
         <![CDATA[
-             SELECT 
-                *
-            FROM filelist
-            order by idx desc
+             select *
+			from filelist left join user
+			on filelist.useridx = user.idx
+			where 1=1
+            ]]>
+            <isNotEmpty property="title">
+            and title LIKE  '%$title$%'
+            </isNotEmpty>
+            <isNotEmpty property="uuidx">
+            and useridx =  $uuidx$ AND security = 0
+            </isNotEmpty>
+             <![CDATA[
+            
+            order by filelist.idx desc
             limit $firstindex$, $recordperpage$
         ]]>
-    </select>
+    </select>   
      <select id="mlistl" resultClass="EgovMap">
         <![CDATA[
             SELECT count(*) num
-            FROM filelist
+            from filelist left join user
+			on filelist.useridx = user.idx
+            where 1=1
+             ]]>
+            <isNotEmpty property="title">
+            and title LIKE  '%$title$%'
+            </isNotEmpty>
+             <isNotEmpty property="uuidx">
+            and filelist.useridx =  $uuidx$ AND security = 0
+            </isNotEmpty>
+             <![CDATA[
+
         ]]>
     </select>
 	<select id="getLogin" resultClass="EgovMap">

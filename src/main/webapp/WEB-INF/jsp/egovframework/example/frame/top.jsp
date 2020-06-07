@@ -49,7 +49,7 @@
          <!-- <h5 class="centered">Sam Soffes</h5> -->
          
           <li class="mt">
-            <a href="/webhdd/mg/mgtest.do">
+            <a href="/webhdd/mg/myboard.do">
               <!-- <i class="fa fa-desktop"></i> -->
               <i class="fa fa-hdd-o"></i>
               <span>내 파일</span>
