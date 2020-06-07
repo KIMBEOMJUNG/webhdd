@@ -414,7 +414,7 @@
                   </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" onclick="join()" >가입</button>
+                      <button class="btn btn-theme" type="button" onclick="join()" >가입</button>
                       <button class="btn btn-theme04" type="button" onclick="location.href='../mg/test.do'">취소</button>
                     </div>
                   </div>
