@@ -3,6 +3,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -71,6 +72,48 @@ public class parkContal {
 		      
 			return "park/board_detail";
 		}
+	   
+	   @RequestMapping(value="/park/commentinsert.do")
+	 		public String commentinsert(HttpServletRequest request, ModelMap model) throws Exception
+	 		{
+		   String name = ""+request.getParameter("name");
+		   String bordidx = ""+request.getParameter("bordidx");
+		   HttpSession session = request.getSession();
+		   	String uuidx = ""+session.getAttribute("uuidx");
+		      EgovMap in =new EgovMap();
+		      in.put("name", name);
+		      in.put("uuidx", uuidx);
+		      in.put("bordidx", bordidx);
+		      sampleDAO.insert("commentinsert",in);
+		      return "redirect:/park/board_detail.do?idx="+bordidx;
+
+	 		}
+	   @RequestMapping(value="/park/uesrupdata.do")
+		public String uesrupdata(HttpServletRequest request, ModelMap model) throws Exception
+		{
+	   String name = ""+request.getParameter("username");
+	   String grade = ""+request.getParameter("grade");
+	   String uuidx = ""+request.getParameter("userid");
+	   String idx = ""+request.getParameter("idx");
+	      EgovMap in =new EgovMap();
+	      in.put("username", name);
+	      in.put("userid", uuidx);
+	      in.put("grade", grade);
+	      in.put("idx", idx);
+	      sampleDAO.update("uesrupdata",in);
+	      return "redirect:/park/park.do";
+
+		}
+	   @RequestMapping(value="/park/delprocess.do")
+	   public String delprocess(HttpServletRequest request, ModelMap model) throws Exception
+	   {
+	      String idx = ""+request.getParameter("idx");
+	      EgovMap in =new EgovMap();
+	      in.put("idx", idx);
+	      sampleDAO.delete("del",in);
+	      return "redirect:/park/park.do";
+	   }
+
 
 	   
 }

@@ -1,5 +1,7 @@
 
 
+
+
 package egovframework.example.sample.web;
 
 import java.util.List;
@@ -37,6 +39,7 @@ public class mgController {
       paginationInfo.setPageSize(7);
 
       //인자생성
+<<<<<<< HEAD
       String title = request.getParameter("title");
 	    EgovMap in = new EgovMap();
 	    in.put("title", title);
@@ -45,6 +48,14 @@ public class mgController {
 	     List<?> list = (List<?>) sampleDAO.list("mlist", in);
 	     model.addAttribute("resultList", list);
 
+=======
+      EgovMap in = new EgovMap();
+      in.put("firstindex", "" + paginationInfo.getFirstRecordIndex());
+      in.put("recordperpage", "" + paginationInfo.getRecordCountPerPage());
+      List<?> list = (List<?>) sampleDAO.list("mlist", in);
+      model.addAttribute("resultList", list);
+      
+>>>>>>> 20d61f0ecb8447c6ddf9d65f2dca5eab301c7b96
       EgovMap count = (EgovMap) sampleDAO.select("mlistl", in);
       String total = "" + count.get("num");
       paginationInfo.setTotalRecordCount(Integer.parseInt(total));
