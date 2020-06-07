@@ -48,6 +48,8 @@ public class bjController {
 	@RequestMapping(value="/bj/fileup.do")
 	public String fileup(HttpServletRequest request, ModelMap model) throws Exception
 	{
+		HttpSession session = request.getSession();
+	    String uuidx = ""+session.getAttribute("uuidx");
 		String title = ""+request.getParameter("title");
 		String context = ""+request.getParameter("context");
 		String se = ""+request.getParameter("se");
@@ -57,6 +59,7 @@ public class bjController {
 		in.put("title", title);
 		in.put("context", context);
 		in.put("type", type);
+		in.put("uuidx", uuidx);
 		System.out.println("se:"+se);
 		if(se.compareTo("1") == 0)
 		{
@@ -68,7 +71,7 @@ public class bjController {
 		}
 		in.put("img", fileName);
 		sampleDAO.insert("inputimg",in);
-		return "redirect:/bj/admin.do";
+		return "redirect:/mg/mgtest.do";
 }
 	
 
@@ -191,8 +194,9 @@ public class bjController {
 	@RequestMapping(value = "/frame/top.do")
 	public String top(HttpServletRequest request, ModelMap model) throws Exception {
 		System.out.println("/frame/top.do");
-		
-		
+		HttpSession session = request.getSession();
+	    String id = ""+session.getAttribute("id");
+	    model.addAttribute("id", id ) ;
 		return "frame/top";
 	}
 	

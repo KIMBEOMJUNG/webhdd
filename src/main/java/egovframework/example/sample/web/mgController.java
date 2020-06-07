@@ -44,6 +44,7 @@ public class mgController {
       in.put("recordperpage", "" + paginationInfo.getRecordCountPerPage());
       List<?> list = (List<?>) sampleDAO.list("mlist", in);
       model.addAttribute("resultList", list);
+      
       EgovMap count = (EgovMap) sampleDAO.select("mlistl", in);
       String total = "" + count.get("num");
       paginationInfo.setTotalRecordCount(Integer.parseInt(total));
@@ -74,10 +75,11 @@ public class mgController {
       
       else{
          HttpSession session = request.getSession();
-         session.setAttribute("useremail", ed.get("email"));
-         String useremail = ""+session.getAttribute("useremail");
+         session.setAttribute("id", ed.get("id"));
+         session.setAttribute("uuidx", ed.get("idx"));
+         String id = ""+session.getAttribute("id");
          String useridx = ""+session.getAttribute("idx");
-         System.out.println("useremail:"+useremail);
+         System.out.println("id:"+id);
       }
          
       model.addAttribute("item", ed);

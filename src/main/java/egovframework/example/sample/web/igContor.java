@@ -28,41 +28,30 @@ public class igContor {
 		return "ig/igfn";
 	}
 
-	@RequestMapping(value = "/ig/igfn2.do")
-	public String main2(HttpServletRequest request, ModelMap model) throws Exception {
-		/*
-		 * List<?> list = (List<?>) sampleDAO.list("selecta"); //Sample_sql.xml
-		 * 파일 안에 select id 와 일치시켜주기! model.addAttribute("resultList", list);
-		 */
-		return "ig/igfn2";
+	@RequestMapping(value = "/ig/joinprocess.do")
+	public String inputprocess(HttpServletRequest request, ModelMap model) throws Exception {
+		String Username = "" + request.getParameter("Username");
+		String password = "" + request.getParameter("password");
+		String Nickname = "" + request.getParameter("Nickname");
+
+		EgovMap in = new EgovMap();
+		in.put("Username", Username);
+		in.put("password", password);
+		in.put("Nickname", Nickname);
+		sampleDAO.insert("join", in);
+		return "redirect:/ig/igfn.do";
 	}
 
-	 @RequestMapping(value="/ig/joinprocess.do")
-	   public String inputprocess(HttpServletRequest request, ModelMap model) throws Exception
-	   {
-	      String Username = ""+request.getParameter("Username");
-	      String password = ""+request.getParameter("password");
-	      String Nickname = ""+request.getParameter("Nickname");
-	      
-	      EgovMap in =new EgovMap();
-	      in.put("Username", Username);
-	      in.put("password", password);
-	      in.put("Nickname", Nickname);
-	      sampleDAO.insert("join",in);
-	      return "redirect:/ig/igfn.do";
-	   }
-	 
-	 @ResponseBody
-	 @RequestMapping(value = "/ig/checkemail.do")
-	 public String checkid(HttpServletRequest request, ModelMap model) throws Exception
-	 {
-	    String ckid = request.getParameter("ckemail");
-	    EgovMap in = new EgovMap();
-	    in.put("ckid", ckid);
-	    EgovMap ed = (EgovMap) sampleDAO.select("selectCkid", in);
-	    if(ed == null)//중복되지 않은 값
-	       return "ok";
-	    else//중복됨 사용못하는 값
-	       return "fail";      
-	 }
+	@ResponseBody
+	@RequestMapping(value = "/ig/checkemail.do")
+	public String checkid(HttpServletRequest request, ModelMap model) throws Exception {
+		String ckid = request.getParameter("ckemail");
+		EgovMap in = new EgovMap();
+		in.put("ckid", ckid);
+		EgovMap ed = (EgovMap) sampleDAO.select("selectCkid", in);
+		if (ed == null)// 중복되지 않은 값
+			return "ok";
+		else// 중복됨 사용못하는 값
+			return "fail";
+	}
 }
