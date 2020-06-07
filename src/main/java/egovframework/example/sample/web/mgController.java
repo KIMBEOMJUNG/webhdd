@@ -39,7 +39,6 @@ public class mgController {
       paginationInfo.setPageSize(7);
 
       //인자생성
-<<<<<<< HEAD
       String title = request.getParameter("title");
 	    EgovMap in = new EgovMap();
 	    in.put("title", title);
@@ -48,14 +47,7 @@ public class mgController {
 	     List<?> list = (List<?>) sampleDAO.list("mlist", in);
 	     model.addAttribute("resultList", list);
 
-=======
-      EgovMap in = new EgovMap();
-      in.put("firstindex", "" + paginationInfo.getFirstRecordIndex());
-      in.put("recordperpage", "" + paginationInfo.getRecordCountPerPage());
-      List<?> list = (List<?>) sampleDAO.list("mlist", in);
-      model.addAttribute("resultList", list);
-      
->>>>>>> 20d61f0ecb8447c6ddf9d65f2dca5eab301c7b96
+
       EgovMap count = (EgovMap) sampleDAO.select("mlistl", in);
       String total = "" + count.get("num");
       paginationInfo.setTotalRecordCount(Integer.parseInt(total));
@@ -68,6 +60,7 @@ public class mgController {
    @RequestMapping(value = "/mg/search.do")
    public String search(HttpServletRequest request, ModelMap model) throws Exception {
       //페이징
+
 	   String title = "%"+request.getParameter("title")+"%";
 	      
 	      EgovMap in = new EgovMap();
@@ -83,6 +76,7 @@ public class mgController {
 	      }
 	         
 //	      model.addAttribute("resultList", ed);
+
       
       return "redirect:/mg/mgtest.do"; 
    }
@@ -134,6 +128,7 @@ public class mgController {
       paginationInfo.setRecordCountPerPage(10);
       paginationInfo.setPageSize(7);
       HttpSession session = request.getSession();
+
 	    String uuidx = ""+session.getAttribute("uuidx");
       //인자생성
       String title = request.getParameter("title");
