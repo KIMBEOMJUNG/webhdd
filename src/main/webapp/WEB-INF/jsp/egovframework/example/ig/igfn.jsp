@@ -44,8 +44,10 @@
         TOP BAR CONTENT & NOTIFICATIONS
         *********************************************************************************************************************************************************** -->
 		<!--header start-->
-		<header class="panel-heading black-bg">
-			<h4 class="gen-case">웹하드</h4>
+		<header class="header black-bg">
+			<!--logo start-->
+			<a href="index.html" class="logo"><b>웹<span>하드</span></b></a>
+			<!--logo end-->
 		</header>
 		<!--header end-->
 		<!-- **********************************************************************************************************************************************************
@@ -117,9 +119,11 @@
 		<!--footer start-->
 		<footer class="site-footer">
 			<div class="text-center">
-				<p>&copy; jsp와 서블릿 프로젝트<strong>Dashio</strong>. 웹하드</p>
+				<p>
+					&copy; jsp와 서블릿 프로젝트<strong>Dashio</strong>. 웹하드
+				</p>
 				<div class="credits">
-			<!--
+					<!--
             You are NOT allowed to delete the credit link to TemplateMag with free version.
             You can delete the credit link only if you bought the pro version.
             Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
