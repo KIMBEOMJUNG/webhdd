@@ -35,6 +35,10 @@
     Author: TemplateMag.com
     License: https://templatemag.com/license/
   ======================================================= -->
+  <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ea192341afbb203"></script>
+  
+  
 </head>
 <script type="text/javascript">
  $(input)(){
@@ -61,7 +65,7 @@
                   <h1>${item.title}</h1><br>
                   <address>
                     <h4><i class="fa fa-user-circle-o" aria-hidden="true"></i>&emsp;<strong>${item.nickname}</strong></h4>
-
+					
                   </address>
                 </div>
                 <!-- /pull-left -->
@@ -72,7 +76,7 @@
                 <br>
                 <br>
                 <a href="/webhdd/mcsad/${item.files}" download="${item.files}" ><button type="button"  class="btn btn-primary btn-lg">다운로드</button></a>
-                <div style="float: right;"> <strong>업로드 날짜 :${item.date}</strong></div><br><br>
+                <p><div > <strong>업로드 날짜 :${item.date}</strong></div><br><br>
                 <div class="row">
                   <div class="col-md-9">
            
@@ -81,11 +85,12 @@
                  
                   <br>
                   <br>
-                  <h4>파일 설명 :<br><br> ${item.context}</h4>
+                  <h4>파일 설명 : <button type="button" onclick="location.href='/webhdd/bj/goodup.do?idx=${item.idx}'" class="btn btn-success"><i class="fa fa-thumbs-o-up"></i> ${item.good }</button>
+                  <br><br> <pre>${item.context}</pre></h4>
                  	  
                   	  <br>
                  
-               
+               <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox_ian5"></div>
                   </div>
                   <!-- /col-md-9 -->
                   <div class="col-md-3">
@@ -111,10 +116,10 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th style="width:60px" class="text-center">순서</th>
-                      <th class="text-left">댓글 내용</th>
-                      <th style="width:140px" class="text-right">등급</th>
-                      <th style="width:90px" class="text-right">사용자 이름</th>
+                      <th style="width:10%" class="text-center">순서</th>
+                      <th style="width:60%"class="text-left">내용</th>
+                      <th style="width:15%" class="text-right">등급</th>
+                      <th style="width:15%" class="text-right">이름</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -123,7 +128,7 @@
                     <%j++; %>
                     <tr>
                       <td class="text-center"><%=j %></td>
-                      <td>${result.comment}</td>
+                      <td class="text-left">${result.comment}</td>
                        <c:if test="${result.grade==0}">
                   		 <td class="text-right">일반 사용자</td>
                  	   </c:if >
@@ -144,12 +149,11 @@
                 
                     <div class="form-group ">
                      
-                      <div class="col-lg-10">
                       
                         <input class=" form-control"  id="cname" name="name" minlength="2" type="text" required />
                         <input  type="hidden"  id="bordidx" name="bordidx" value="${item.idx }"   required />
-                      </div>
-                      <button class="btn btn-theme"  style="float: right;" type="submit">등록</button>
+               
+                      <button class="btn btn-theme"  style="float: right;margin-top:10px" type="submit">등록</button>
                     </div>
                     
                     <div class="form-group">
@@ -173,7 +177,7 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; jsp와 서블릿 프로젝트<strong>A조</strong>. 웹하드
         </p>
         <div class="credits">
           <!--
@@ -182,9 +186,9 @@
             Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
             Licensing information: https://templatemag.com/license/
           -->
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+         팀명: 박물관이 살아있다. 
         </div>
-        <a href="profile.html#" class="go-top">
+        <a href="responsive_table.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>

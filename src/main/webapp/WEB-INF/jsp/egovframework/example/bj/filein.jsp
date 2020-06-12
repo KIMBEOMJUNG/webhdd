@@ -158,7 +158,7 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; jsp와 서블릿 프로젝트<strong>A조</strong>. 웹하드
         </p>
         <div class="credits">
           <!--
@@ -167,9 +167,9 @@
             Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
             Licensing information: https://templatemag.com/license/
           -->
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+         팀명: 박물관이 살아있다. 
         </div>
-        <a href="advanced_form_components.html#" class="go-top">
+        <a href="responsive_table.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>

@@ -37,6 +37,33 @@
 </insert>
     
     
+<delete id="filedel">
+		<![CDATA[
+			DELETE FROM filelist
+			WHERE idx=#idx#
+		]]>
+</delete>
     
+<select id="myinfo" resultClass="EgovMap">
+        <![CDATA[
+            SELECT *
+            ,(select count(*) num from filelist f where f.useridx = u.idx and type = 0 )dsum
+            ,(select count(*) num from filelist f where f.useridx = u.idx and type = 1 )ssum
+            ,(select count(*) num from filelist f where f.useridx = u.idx and type = 2 )msum
+            ,(select count(*) num from filelist f where f.useridx = u.idx and type = 3 )musum
+            ,(select sum(good) num from filelist f where f.useridx = u.idx )good
+            FROM user u
+            where u.idx=#idx#
+        ]]>
+</select> 
+
+<update id="goodup">
+		<![CDATA[
+			UPDATE filelist
+			SET good=good+1
+				
+			WHERE idx=#idx#
+		]]>
+</update>   
 
 </sqlMap>

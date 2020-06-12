@@ -40,8 +40,10 @@ public class mgController {
 
       //인자생성
       String title = request.getParameter("title");
+      String type = request.getParameter("type");//카테고리 값
        EgovMap in = new EgovMap();
        in.put("title", title);
+       in.put("type", type);
        in.put("firstindex", "" + paginationInfo.getFirstRecordIndex());
         in.put("recordperpage", "" + paginationInfo.getRecordCountPerPage());        
         List<?> list = (List<?>) sampleDAO.list("mlist", in);
@@ -53,11 +55,12 @@ public class mgController {
       paginationInfo.setTotalRecordCount(Integer.parseInt(total));
       model.addAttribute("paginationInfo", paginationInfo);
       model.addAttribute("title", title);
+      model.addAttribute("type", type);
       
      
       return "mg/mgtest";
    }
-   @RequestMapping(value = "/mg/search.do")
+   /*@RequestMapping(value = "/mg/search.do")
    public String search(HttpServletRequest request, ModelMap model) throws Exception {
       //페이징
 
@@ -79,7 +82,7 @@ public class mgController {
 
       
       return "redirect:/mg/mgtest.do"; 
-   }
+   }*/
    
    @RequestMapping(value="/mg/test.do")
    public String test(HttpServletRequest request, ModelMap model) throws Exception
@@ -106,8 +109,10 @@ public class mgController {
          HttpSession session = request.getSession();
          session.setAttribute("id", ed.get("id"));
          session.setAttribute("uuidx", ed.get("idx"));
+         session.setAttribute("ulevel", ed.get("grade"));
          String id = ""+session.getAttribute("id");
          String useridx = ""+session.getAttribute("idx");
+         String ulevel = ""+session.getAttribute("ulevel");
          System.out.println("id:"+id);
       }
          
@@ -132,9 +137,11 @@ public class mgController {
        String uuidx = ""+session.getAttribute("uuidx");
       //인자생성
       String title = request.getParameter("title");
+      String type = request.getParameter("type");//카테고리 값
        EgovMap in = new EgovMap();
        in.put("uuidx", uuidx);
        in.put("title", title);
+       in.put("type", type);
        in.put("firstindex", "" + paginationInfo.getFirstRecordIndex());
         in.put("recordperpage", "" + paginationInfo.getRecordCountPerPage());        
         List<?> list = (List<?>) sampleDAO.list("mlist", in);
@@ -145,6 +152,7 @@ public class mgController {
       paginationInfo.setTotalRecordCount(Integer.parseInt(total));
       model.addAttribute("paginationInfo", paginationInfo);
       model.addAttribute("title", title);
+      model.addAttribute("type", type);
       
      
       return "mg/myboard";

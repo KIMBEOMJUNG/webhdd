@@ -19,7 +19,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b><span>웹</span>하드</b></a>
+      <a href="/webhdd/mg/myboard.do" class="logo"><b><span>웹</span>하드</b></a>
       <!--logo end-->
       
       <div class="top-menu">
@@ -60,10 +60,17 @@
               <span>전체공개 파일</span>
               </a>
               
-              <a href="/webhdd/park/park.do">
+              <a href="/webhdd/bj/myinfo.do">
               <i class="fa fa-github-alt"></i>
               <span>내정보</span>
               </a>
+              
+              <c:if test="${level eq 1 }">
+              <a href="/webhdd/park/park.do">
+              <i class="fa fa-rocket"></i>
+              <span>관리자페이지</span>
+              </a>
+              </c:if>
           </li>
           
           

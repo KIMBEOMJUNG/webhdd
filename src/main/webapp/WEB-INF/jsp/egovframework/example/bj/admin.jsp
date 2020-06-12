@@ -134,7 +134,7 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; jsp와 서블릿 프로젝트<strong>Dashio</strong>. 웹하드
+          &copy; jsp와 서블릿 프로젝트<strong>A조</strong>. 웹하드
         </p>
         <div class="credits">
           <!--

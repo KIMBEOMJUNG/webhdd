@@ -4,6 +4,7 @@
 <%@ taglib prefix="ui"     uri="http://egovframework.gov/ctl/ui"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 
 <!DOCTYPE html>
@@ -72,12 +73,12 @@
                  <h3 > <i class="fa fa-align-justify"></i>  카테고리</h3>
                </div>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li class="active"><a href="inbox.html"> <i class="fa fa-film"></i> 동영상  <!-- <span class="label label-theme pull-right inbox-notification">3</span> --></a></li>
-                  <li><a href="#"> <i class="fa fa-camera"></i> 사진 </a></li>
-                  <li><a href="#"> <i class="fa fa-file-text-o"></i> 문서 </a></li>
-                  <li><a href="#"> <i class="fa fa-music"></i> 음악 <!-- <span class="label label-info pull-right inbox-notification">8</span> --></a></a>
+                  <c:if test="${type eq 0 }"><li class="active" ></c:if> <c:if test="${type ne 0 }"><li></c:if> <a href="/webhdd/mg/mgtest.do?type=0"> <i class="fa fa-film"></i> 동영상  <!-- <span class="label label-theme pull-right inbox-notification">3</span> --></a></li>
+                  <c:if test="${type eq 1 }"><li class="active" ></c:if> <c:if test="${type ne 1 }"><li></c:if> <a href="/webhdd/mg/mgtest.do?type=1"> <i class="fa fa-camera"></i> 사진 </a></li>
+                  <c:if test="${type eq 2 }"><li class="active" ></c:if> <c:if test="${type ne 2 }"><li></c:if> <a href="/webhdd/mg/mgtest.do?type=2"> <i class="fa fa-file-text-o"></i> 문서 </a></li>
+                  <c:if test="${type eq 3 }"><li class="active" ></c:if> <c:if test="${type ne 3 }"><li></c:if> <a href="/webhdd/mg/mgtest.do?type=3"> <i class="fa fa-music"></i> 음악 <!-- <span class="label label-info pull-right inbox-notification">8</span> --></a></a>
                   </li>
-                  <li><a href="#"> <i class="fa fa-inbox"></i> 모든 파일 </a></li>
+                  <c:if test="${type eq null }"><li class="active" ></c:if> <c:if test="${type ne null }"><li></c:if><a href="/webhdd/mg/mgtest.do"> <i class="fa fa-inbox"></i> 모든 파일 </a></li>
                 </ul>
               </div>
             </section>
@@ -87,7 +88,7 @@
             <section class="panel">
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
-                    	게시판
+                    	전체공개 파일
                 </h4>                   
               </header>
 <!------------------------------------------- 검색창 ----------------------------------------------------->
@@ -121,7 +122,7 @@
               	<!--  -->
               <div class="panel-body minimal">
                 <div class="mail-option">
-                  <div class="chk-all">
+                  <!-- <div class="chk-all">
                     <div class="pull-left mail-checkbox">
                       <input type="checkbox" class="">
                     </div>
@@ -165,7 +166,7 @@
                       <li class="divider"></li>
                       <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
                     </ul>
-                  </div>
+                  </div> -->
 
                 </div>
                 <div class="table-inbox-wrap ">
@@ -183,7 +184,7 @@
                         <td class="view-message dont-show"><a href="/webhdd/park/board_detail.do?idx=${item.idx}">${item.id}</a></td>
                         <td class="view-message"><a href="/webhdd/park/board_detail.do?idx=${item.idx}">${item.title}</a></td>
                         <td class="view-message inbox-small-cells" ></td>
-                        <td class="view-message text-right">${item.date }</td> 
+                        <td class="view-message text-right"><fmt:formatDate value="${item.date}" pattern="YYYY-MM-dd (HH:mm)"/></td> 
                       </tr>
                       
                       </c:forEach>
@@ -192,12 +193,15 @@
                     </tbody>
                   </table>
                   <!-- 페이지 -->
-   			<ui:pagination paginationInfo="${paginationInfo }" type="image" jsFunction="fn_egov_link_page"/>             
-			<form action="/webhdd/park/park.do" name="listForm" id="listForm">
+                  <div style="text-align: center;">
+		   			<ui:pagination  paginationInfo="${paginationInfo }" type="image" jsFunction="fn_egov_link_page"/>             
+					</div>
+			
+			<form action="/webhdd/park/mgtest.do" name="listForm" id="listForm">
   			 <input type="hidden" name="pageIndex" value="1"/>
   			 <input type="hidden" name="title" value="${title }"/>
   			 <!-- 페이지 버튼 -->
-  			 <ul class="unstyled inbox-pagination">
+  			 <!-- <ul class="unstyled inbox-pagination">
                 <li><span>1-50 of 99</span></li>
                 <li>
                    <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
@@ -205,7 +209,7 @@
                 <li>
                    <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
                 </li>
-             </ul>   
+             </ul>    -->
 			</form>
                 </div>
               </div>
@@ -221,7 +225,7 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; jsp와 서블릿 프로젝트<strong>A조</strong>. 웹하드
         </p>
         <div class="credits">
           <!--
@@ -230,9 +234,9 @@
             Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
             Licensing information: https://templatemag.com/license/
           -->
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+         팀명: 박물관이 살아있다. 
         </div>
-        <a href="inbox.html#" class="go-top">
+        <a href="responsive_table.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>

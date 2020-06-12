@@ -196,9 +196,52 @@ public class bjController {
 		System.out.println("/frame/top.do");
 		HttpSession session = request.getSession();
 	    String id = ""+session.getAttribute("id");
+	    String ulevel = ""+session.getAttribute("ulevel");
 	    model.addAttribute("id", id ) ;
+	    model.addAttribute("level", ulevel ) ;
 		return "frame/top";
 	}
+	
+	@RequestMapping(value="/bj/filedel.do")
+	public String filedel(HttpServletRequest request, ModelMap model) throws Exception
+	{
+		
+		String idx = ""+request.getParameter("idx");
+		
+		EgovMap in =new EgovMap();
+		in.put("idx", idx);
+		
+
+		sampleDAO.delete("filedel",in);
+		return "redirect:/mg/myboard.do";
+}
+	
+	@RequestMapping(value = "/bj/myinfo.do")
+	public String myinfo(HttpServletRequest request, ModelMap model) throws Exception {
+		HttpSession session = request.getSession();
+	    String uuidx = ""+session.getAttribute("uuidx");
+		EgovMap in =new EgovMap();
+		in.put("idx", uuidx);
+		model.addAttribute("item",  sampleDAO.select("myinfo",in)  );
+
+
+		return "bj/myinfo";
+	}
+	
+	@RequestMapping(value="/bj/goodup.do")
+	public String goodup(HttpServletRequest request, ModelMap model) throws Exception
+	{
+		
+		String idx = ""+request.getParameter("idx");
+		
+		EgovMap in =new EgovMap();
+		in.put("idx", idx);
+		
+
+		sampleDAO.delete("goodup",in);
+		return "redirect:/park/board_detail.do?idx="+idx;
+}
+	
 	
 	
 	
