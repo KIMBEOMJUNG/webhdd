@@ -30,6 +30,8 @@
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/style-responsive.css" rel="stylesheet">
   <script src="../lib/chart-master/Chart.js"></script>
+  
+     
     <script>
            function fn_egov_link_page(pageNo){
               document.listForm.pageIndex.value = pageNo;

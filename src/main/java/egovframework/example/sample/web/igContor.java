@@ -39,7 +39,7 @@ public class igContor {
 		in.put("password", password);
 		in.put("Nickname", Nickname);
 		sampleDAO.insert("join", in);
-		return "redirect:/ig/igfn.do";
+		return "redirect:/mg/test.do";
 	}
 
 	@ResponseBody

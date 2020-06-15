@@ -27,8 +27,9 @@ public class mgController {
    CommonsMultipartResolver multipartResolver;
 
    @RequestMapping(value = "/mg/mgtest.do")
-   public String park(HttpServletRequest request, ModelMap model) throws Exception {
+   public String mgtest(HttpServletRequest request, ModelMap model) throws Exception {
       //페이징
+	   
       PaginationInfo paginationInfo = new PaginationInfo();
       if (request.getParameter("pageIndex") == null) {
          paginationInfo.setCurrentPageNo(1);
@@ -37,13 +38,15 @@ public class mgController {
       }
       paginationInfo.setRecordCountPerPage(10);
       paginationInfo.setPageSize(7);
-
+      
+    	  	
       //인자생성
       String title = request.getParameter("title");
       String type = request.getParameter("type");//카테고리 값
        EgovMap in = new EgovMap();
        in.put("title", title);
        in.put("type", type);
+       in.put("open", 1);//1이면 전체공개
        in.put("firstindex", "" + paginationInfo.getFirstRecordIndex());
         in.put("recordperpage", "" + paginationInfo.getRecordCountPerPage());        
         List<?> list = (List<?>) sampleDAO.list("mlist", in);

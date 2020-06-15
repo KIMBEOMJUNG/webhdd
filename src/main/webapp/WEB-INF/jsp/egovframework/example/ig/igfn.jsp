@@ -70,7 +70,7 @@
 									action="/webhdd/ig/joinprocess.do"
 									onsubmit='return checkValue()'>
 									<div class="form-group ">
-										<label for="Username" class="control-label col-lg-2">Username</label>
+										<label for="Username" class="control-label col-lg-2">User ID</label>
 										<div class="col-lg-10">
 											<input class="form-control " id="Username" name="Username"
 												type="text" /> <input class="btn btn-theme"

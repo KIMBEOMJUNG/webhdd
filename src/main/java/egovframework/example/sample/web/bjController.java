@@ -106,6 +106,8 @@ public class bjController {
 		HttpSession session = request.getSession();
 		session.setAttribute("useremail", null);
 		session.setAttribute("useridx", null);
+		session.setAttribute("id", null);
+		session.setAttribute("ulevel", null);
 		return "redirect:/mg/test.do";
 	}
 	
@@ -185,7 +187,9 @@ public class bjController {
 	@RequestMapping(value = "/frame/admintop.do")
 	public String admintop(HttpServletRequest request, ModelMap model) throws Exception {
 		System.out.println("/frame/admintop.do");
-		
+		HttpSession session = request.getSession();
+	    String id = ""+session.getAttribute("id");
+	    model.addAttribute("id", id ) ;
 		
 		return "frame/admintop";
 	}

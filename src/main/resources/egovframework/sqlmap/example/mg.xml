@@ -30,6 +30,9 @@
             <isNotEmpty property="uuidx">
             and useridx =  #uuidx#
             </isNotEmpty>
+            <isEqual   property="open" compareValue="1">
+            and security = 1
+            </isEqual>
              <![CDATA[
             
             order by filelist.idx desc
@@ -52,6 +55,9 @@
              <isNotEmpty property="uuidx">
             and filelist.useridx =  #uuidx#
             </isNotEmpty>
+            <isEqual   property="open" compareValue="1">
+            and security = 1
+            </isEqual>
              <![CDATA[
 
         ]]>
