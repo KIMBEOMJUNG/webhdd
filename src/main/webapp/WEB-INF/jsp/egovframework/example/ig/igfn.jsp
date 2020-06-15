@@ -46,7 +46,7 @@
 		<!--header start-->
 		<header class="header black-bg">
 			<!--logo start-->
-			<a href="index.html" class="logo"><b>웹<span>하드</span></b></a>
+			<a href="../mg/test.do" class="logo"><b>웹<span>하드</span></b></a>
 			<!--logo end-->
 		</header>
 		<!--header end-->
@@ -151,86 +151,84 @@
 	<script src="../lib/form-validation-script.js"></script>
 
 	<script>
-var formckemail = 0;
-$("#Username").on("change keyup paste", function() {
-      console.log("formckemail:"+formckemail);
-      if(formckemail==1)//중복처리된상태
-      {
-         formckemail=0;
-         //$(".joincheckbtn").attr('class','btn btn-success');//클래스 변경
-          $("#bubu").val("중복체크");//글자변경
-      }
-   });  
+		var formckemail = 0;
+		$("#Username").on("change keyup paste", function() {
+			console.log("formckemail:" + formckemail);
+			if (formckemail == 1)//중복처리된상태
+			{
+				formckemail = 0;
+				//$(".joincheckbtn").attr('class','btn btn-success');//클래스 변경
+				$("#bubu").val("중복체크");//글자변경
+			}
+		});
 
+		function join() {
+			var password = document.getElementById("password").value;
+			var confirm_password = document.getElementById("confirm_password").value;
+			var nickname = document.getElementById("Nickname").value;
 
+			if (formckemail == 0) {
+				alert('중복 확인 버튼을 눌러주세요.');
+				return;
+			}
 
-   function join() {
-      var password = document.getElementById("password").value;
-      var confirm_password = document.getElementById("confirm_password").value;
-      var nickname = document.getElementById("Nickname").value;
+			if (nickname < 1) {
+				alert('닉네임을 입력해주세요.');
+				return;
+			}
 
-      if (formckemail == 0) {
-         alert('중복 확인 버튼을 눌러주세요.');
-         return;
-      }
-      
-      if (nickname < 1) {
-          alert('닉네임을 입력해주세요.');
-          return;
-       }
+			if (password.length < 1) {
+				alert('비밀번호를 입력해주세요.');
+				return;
+			}
 
-      if (password.length < 1) {
-         alert('비밀번호를 입력해주세요.');
-         return;
-      }
+			if (password != confirm_password) {
+				alert('비밀번호가 일치하지 않습니다.');
+				return;
+			}
 
-      if (password != confirm_password) {
-         alert('비밀번호가 일치하지 않습니다.');
-         return;
-      }
-      
-      alert('회원 가입을 완료했습니다.');
-      var obj = document.getElementById('signupForm');
-      obj.submit();
-   }
+			alert('회원 가입을 완료했습니다.');
+			var obj = document.getElementById('signupForm');
+			obj.submit();
+		}
 
-   function checkemailfunc() {
-      console.log("ckemail!");
-      var ckemail = $("#Username").val();
-      if (ckemail.length < 1) {
-         alert("아이디를 입력해주세요.");
-         return;
-      }
+		function checkemailfunc() {
+			console.log("ckemail!");
+			var ckemail = $("#Username").val();
+			if (ckemail.length < 1) {
+				alert("아이디를 입력해주세요.");
+				return;
+			}
 
-      jQuery.ajax({
-         type : "GET",
-         url : "/webhdd/ig/checkemail.do?ckemail=" + ckemail,
-         success : function(data) {
-            console.log("data:" + data);
-            if (data == "ok") //사용해도됨
-            {
-               formckemail = 1;
-               /* $(".joinoverlapbtn").attr('class','joincheckbtn w-button');//클래스 변경 */
-               alert("사용 가능한 아이디입니다.")
-               $("#bubu").val("중복 확인 완료");//글자변경
-            } else {
-               formckemail = 0;
-               alert("이미 있는 아이디 입니다.");
-               /* $(".joincheckbtn").attr('class','joinoverlapbtn w-button');//클래스 변경 */
-               $("#bubu").val("중복 확인");//글자변경
-            }
-            console.log("formckemail:" + formckemail);
+			jQuery.ajax({
+				type : "GET",
+				url : "/webhdd/ig/checkemail.do?ckemail=" + ckemail,
+				success : function(data) {
+					console.log("data:" + data);
+					if (data == "ok") //사용해도됨
+					{
+						formckemail = 1;
+						/* $(".joinoverlapbtn").attr('class','joincheckbtn w-button');//클래스 변경 */
+						alert("사용 가능한 아이디입니다.")
+						$("#bubu").val("중복 확인 완료");//글자변경
+					} else {
+						formckemail = 0;
+						alert("이미 있는 아이디 입니다.");
+						/* $(".joincheckbtn").attr('class','joinoverlapbtn w-button');//클래스 변경 */
+						$("#bubu").val("중복 확인");//글자변경
+					}
+					console.log("formckemail:" + formckemail);
 
-         },
-         complete : function(data) {
-         },
-         error : function(xhr, status, error) {
-            console.log("ajax ERROR!!! : ");
-         }
-      });
+				},
+				complete : function(data) {
+				},
+				error : function(xhr, status, error) {
+					console.log("ajax ERROR!!! : ");
+				}
+			});
 
-   }
-</script>
+		}
+	</script>
 
 </body>
 
