@@ -16,7 +16,7 @@
 <meta name="author" content="Dashboard">
 <meta name="keyword"
 	content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-<title>Dashio - Bootstrap Admin Template</title>
+<title>나만의 웹하드</title>
 
 <!-- Favicons -->
 <link href="../img/favicon.png" rel="icon">
@@ -118,24 +118,24 @@
 		<!--main content end-->
 		<!--footer start-->
 		<footer class="site-footer">
-			<div class="text-center">
-				<p>
-					&copy; jsp와 서블릿 프로젝트<strong>Dashio</strong>. 웹하드
-				</p>
-				<div class="credits">
-					<!--
+      <div class="text-center">
+        <p>
+          &copy; jsp와 서블릿 프로젝트<strong>A조</strong>. 웹하드
+        </p>
+        <div class="credits">
+          <!--
             You are NOT allowed to delete the credit link to TemplateMag with free version.
             You can delete the credit link only if you bought the pro version.
             Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
             Licensing information: https://templatemag.com/license/
-            -->
-					팀명: 박물관이 살아있다.
-				</div>
-				<a href="responsive_table.html#" class="go-top"> <i
-					class="fa fa-angle-up"></i>
-				</a>
-			</div>
-		</footer>
+          -->
+         팀명: 박물관이 살아있다. 
+        </div>
+        <a href="responsive_table.html#" class="go-top">
+          <i class="fa fa-angle-up"></i>
+          </a>
+      </div>
+    </footer>
 		<!--footer end-->
 	</section>
 	<!-- js placed at the end of the document so the pages load faster -->
