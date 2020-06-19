@@ -153,19 +153,20 @@ public class bjController {
 	          System.out.println("FileUpload5");
 	          file = entry.getValue(); // 8.파일 이름 데이타 얻기
 	          
-	        /* String str = file.getOriginalFilename();
-             String[] nugg = str.split(".");*/
-            /* System.out.println("cj:"+nugg[0]);
-             System.out.println("cj2:"+nugg[7]);*/
+	         String str2 = file.getOriginalFilename();
+	         System.out.println("str2:"+str2);
+             String[] nugg = str2.split("\\.");
+             System.out.println("ssss"+nugg[1]);
+
      
              
 	          
 	          System.out.println("dbg 1 test file :"+file);
 	          if (!"".equals(file.getOriginalFilename())) { //빈파일인지 체크
 	        	  System.out.println("빈파일");
-	             filePath = uploadPath + "\\"+System.currentTimeMillis() + file.getOriginalFilename(); // 9.파일이름에 경로디렉토리를 추가하여 풀패스 설정
+	             filePath = uploadPath + "\\"+System.currentTimeMillis() + "."+nugg[1]; // 9.파일이름에 경로디렉토리를 추가하여 풀패스 설정
 	             System.out.println("dbg 2 빈파일 filepath:"+filePath);    
-	             fn = System.currentTimeMillis()+file.getOriginalFilename() ; // 파일이름을 나중에 엑세스 하기 위하여 저장, DB에 저장하거나 디버깅용으로 출력해보거너 할때 사용하면됨.
+	             fn = System.currentTimeMillis()+ "."+nugg[1] ; // 파일이름을 나중에 엑세스 하기 위하여 저장, DB에 저장하거나 디버깅용으로 출력해보거너 할때 사용하면됨.
 	             
 	             
 	             

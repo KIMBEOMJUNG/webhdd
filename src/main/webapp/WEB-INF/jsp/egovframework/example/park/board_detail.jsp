@@ -77,7 +77,8 @@
                 <%-- <a href="/webhdd/webhdd/mcsad/${item.files}" download >서버용 임시다운로드버튼</a> --%>
                 <br>
                 <br>
-                <a href="/webhdd/webhdd/mcsad/${item.files}" download="${item.files}" ><button type="button"  class="btn btn-primary btn-lg">다운로드</button></a>
+                <a href="/webhdd/webhdd/mcsad/${item.files}" download="${item.title}" ><button type="button"  class="btn btn-primary btn-lg">서버용 다운로드</button></a>
+                <a href="/webhdd/mcsad/${item.files}" download="${item.title}" ><button type="button"  class="btn btn-primary btn-lg">다운로드</button></a>
                 <%-- <a href="/webhdd/webhdd/mcsad/${item.files}" download ><button type="button"  class="btn btn-primary btn-lg">다운로드</button></a> --%>
                 <p><div > <strong>업로드 날짜 :${item.date}</strong></div><br><br>
                 <div class="row">
