@@ -111,6 +111,8 @@ public class parkContal {
 	      EgovMap in =new EgovMap();
 	      in.put("idx", idx);
 	      sampleDAO.delete("del",in);
+	      sampleDAO.delete("delfileall",in);
+	      sampleDAO.delete("delcommentall",in);
 	      return "redirect:/park/park.do";
 	   }
 

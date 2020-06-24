@@ -101,7 +101,7 @@
 	                      <c:if test="${item.security ne 1}">비공개</c:if>
                       </td>
                       <td class="numeric">
-                      	<button class="btn btn-primary btn-xs" type="button">삭제하기</button>
+                      	<button onclick="location.href='/webhdd/bj/admindelfile.do?idx=${item.idx}'" class="btn btn-primary btn-xs" type="button">삭제하기</button>
                       </td>
                     </tr>
                     <%-- <img src="/webhdd/mcsad/${item.files}" width="100" height="auto"> --%>

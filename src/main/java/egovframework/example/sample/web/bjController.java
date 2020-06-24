@@ -247,7 +247,19 @@ public class bjController {
 		return "redirect:/park/board_detail.do?idx="+idx;
 }
 	
-	
+	@RequestMapping(value="/bj/admindelfile.do")
+	public String admindelfile(HttpServletRequest request, ModelMap model) throws Exception
+	{
+		
+		String idx = ""+request.getParameter("idx");
+		
+		EgovMap in =new EgovMap();
+		in.put("idx", idx);
+		
+
+		sampleDAO.delete("filedel",in);
+		return "redirect:/bj/admin.do";
+}
 	
 	
 }

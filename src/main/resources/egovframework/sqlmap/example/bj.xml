@@ -66,4 +66,20 @@
 		]]>
 </update>   
 
+<delete id="delfileall">
+		<![CDATA[
+			DELETE FROM filelist
+			WHERE useridx=#idx#
+		]]>
+</delete>
+
+<delete id="delcommentall">
+		<![CDATA[
+			DELETE FROM bord_comment
+			WHERE useridx=#idx#
+		]]>
+</delete>
+
+
+
 </sqlMap>
